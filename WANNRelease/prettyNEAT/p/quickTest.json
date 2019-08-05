@@ -1,0 +1,5 @@
+{
+    "task":"swingup",
+    "maxGen": 4,
+    "popSize": 16
+}

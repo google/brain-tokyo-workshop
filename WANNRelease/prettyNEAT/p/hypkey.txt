@@ -1,0 +1,33 @@
+# prettyNEAT Hyperparameters
+
+task              - (string) - name of task (see domain/config.py)
+maxGen            - (int)    - number of generations to run algorithm
+popSize           - (int)    - number of individuals in population
+
+alg_nReps         - (int)    - number of repetition when evaluating individuals
+alg_speciate      - (string) - type of speciation ["neat", "none"]
+alg_probMoo       - (float)  - percentage chance of applying second objective when using MOO
+alg_act           - (int)    - activation function for hidden nodes (0 == all allowed by task)
+
+prob_addConn      - (float)  - chance to add connections
+prob_addNode      - (float)  - chance to add node
+prob_crossover    - (float)  - chance of crossover
+prob_enable       - (float)  - chance to enable disabled connection
+prob_mutAct       - (float)  - chance to change node activation function
+prob_mutConn      - (float)  - chance to mutate connection weight
+prob_initEnable   - (float)  - chance to enable each initial connection
+
+select_cullRatio  - (float)  - percent of individuals to remove from parent pool before selection
+select_eliteRatio - (float)  - percent of individuals to pass on to next genration unchanged
+select_rankWeight - (string) - how to scale individual rank ["exp", "lin"]
+select_tournSize  - (int)    - number of competitors in each tournament
+
+spec_compatMod    - (float)  - step size to adjust specThresh
+spec_dropOffAge   - (int)    - generations to trigger stagnation
+spec_target       - (int)    - target number of species
+spec_thresh       - (int)    - distance from species seed to belong to species
+spec_threshMin    - (float)  - minimum species distance threshold
+spec_geneCoef     - (float)  - weighting of non-matching genes in compatibility distance calculation
+spec_weightCoef   - (float)  - weighting of weight differences in compatibility distance calculation
+save_mod          - (int)    - generations between saving results to disk
+bestReps          - (int)    - number of times to test new 'best' solutions to confirm

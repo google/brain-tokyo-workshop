@@ -1,0 +1,8 @@
+{
+    "task":"swingup",
+    "alg_nReps": 3,
+    "alg_act": 5,
+    "initSigma": 0.2,
+    "popSize": 32,
+    "maxGen": 256
+}

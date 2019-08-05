@@ -1,0 +1,9 @@
+{
+    "task":"vae_racing",
+    "alg_nMean": 6,
+    "alg_nReps": 2,
+    "maxGen": 1024,
+    "popSize": 64,
+    "prob_initEnable": 0.5,
+    "save_mod": 16
+}

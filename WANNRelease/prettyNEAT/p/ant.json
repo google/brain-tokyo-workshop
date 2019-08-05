@@ -1,0 +1,10 @@
+{
+    "task":"bullet_ant",
+    "maxGen": 4092,
+    "popSize": 192,
+    "alg_act": 5,
+    "alg_nReps": 4,
+    "prob_initEnable": 0.2,
+    "select_tournSize": 2,
+    "spec_target": 8
+}

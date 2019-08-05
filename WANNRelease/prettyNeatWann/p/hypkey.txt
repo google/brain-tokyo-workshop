@@ -1,0 +1,25 @@
+# WANN Hyperparameters
+
+task              - (string) - name of task (see domain/config.py)
+maxGen            - (int)    - number of generations to run algorithm
+popSize           - (int)    - number of individuals in population
+
+alg_wDist		  - (string) - "standard": 6 chosen values ([-2,-1,-0.5,0.5,1,2])
+                               "other": linspace of alg_nVals between weight caps
+alg_nVals         - (int)    - number of weights to test when evaluating individual
+alg_nReps         - (int)    - number of repetitions when evaluating individuals
+alg_probMoo       - (float)  - chance of applying second objective when using MOO
+
+prob_addConn      - (float)  - chance to add connections
+prob_addNode      - (float)  - chance to add node
+prob_crossover    - (float)  - chance of crossover
+prob_enable       - (float)  - chance to enable disabled connection
+prob_mutAct       - (float)  - chance to change node activation function
+prob_initEnable   - (float)  - chance to enable each initial connection
+
+select_cullRatio  - (float)  - percent of individuals to remove from parent pool before selection
+select_eliteRatio - (float)  - percent of individuals to pass on to next genration unchanged
+select_tournSize  - (int)    - number of competitors in each tournament
+
+save_mod          - (int)    - generations between saving results to disk
+bestReps          - (int)    - number of times to test new 'best' solutions to confirm

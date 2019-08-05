@@ -1,0 +1,9 @@
+{
+    "task":"mnist256",
+    "alg_nMean": 8,
+    "alg_nReps": 1,
+    "maxGen": 4096,
+    "popSize": 960,
+    "prob_initEnable": 0.05,
+    "select_tournSize": 32
+}
