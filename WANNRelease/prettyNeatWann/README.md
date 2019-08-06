@@ -80,4 +80,8 @@ For attribution in academic contexts, please cite this work as
   note   = "\url{https://weightagnostic.github.io}",  
   year   = {2019}  
 }
+```
 
+## Disclaimer
+
+This is not an official Google product.

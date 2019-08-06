@@ -39,3 +39,7 @@ For attribution in academic contexts, please cite this work as
   year   = {2019}  
 }
 ```
+
+## Disclaimer
+
+This is not an official Google product.
