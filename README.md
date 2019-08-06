@@ -6,7 +6,7 @@ This repo contains research workshop materials released by the Google Brain team
 
 ### Weight Agnostic Neural Networks ###
 
-<p align="center">
+<p align="left">
   <img width="50%" src="WANNRelease/prettyNEAT/demo/img/swing.gif">
 </p>
 
