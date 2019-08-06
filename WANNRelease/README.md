@@ -20,7 +20,7 @@ This repository is split into 4 parts:
 
 ### Using the VAE Racer environment 
 
-The pretrained VAE used in the VAERacer experiments is about 20MB, so rather than include it in every folder we put a single copy in the base directory. To use it copy the contents of `vaeRacer` into the root directory, e.g. 
+The pretrained VAE used in the VAERacer experiments is about 20MB, so rather than include it in every folder we put a single copy in the base directory. To use it copy the contents of `vae` into the root directory, e.g. 
 
 `cp -r vae WANN/`
 
