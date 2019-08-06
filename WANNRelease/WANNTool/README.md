@@ -63,7 +63,7 @@ final_mode = False
 render_mode = True
 ```
 
-# how to fine-tune weights of an existing wann
+# how to fine-tune weights of an existing WANN
 
 Below is an example of finetuning a WANN for cartpole swingup. The WANN for this environment is located in `champtions/swing.out` and this file is produced by WANN search from the main project repo.
 
