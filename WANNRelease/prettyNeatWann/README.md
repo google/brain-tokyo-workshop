@@ -52,7 +52,7 @@ Evaluation of the population is embarrassingly parallel so every extra core you 
 
 ![alt text](log/wann_run.png)
 
-Where `Fitness` is the mean reward earned over all trials and weight values. `Median Fitness` is the fitness of the median performing member of the population, `Max Fitness` is the fitness of the best performing member of the population, `Top Fitness` is the best performing member ever found. `Peak Fitness` is the mean reward earned by the best performing member with its best performing weight value. To reproduce this graph see this [jupyter notebook](log/viewRunStats.ipynb).
+Where `Fitness` is the mean reward earned over all trials and weight values. `Median Fitness` is the fitness of the median performing member of the population, `Max Fitness` is the fitness of the best performing member of the population, `Top Fitness` is the best performing member ever found. `Peak Fitness` is the mean reward earned by the best performing member with its best performing weight value. To reproduce this graph see this [jupyter notebook](../WANN/log/viewRunStats.ipynb).
 
 The full list of hyperparameters and their meaning is explained in [hypkey.txt](p/hypkey.txt)
 
