@@ -64,7 +64,7 @@ To view or test a WANN:
 python wann_test.py -p p/swingup.json -i champions/swing.out --nReps 3 --view True
 ```
 
-WANNs are saved as 2D numpy arrays and can be retested, train, and viewed using the [WANN_tool](../WANN_tool) provided.
+WANNs are saved as 2D numpy arrays and can be retested, train, and viewed using the [WANNTool](../WANNTool) provided.
 
 ---
 
