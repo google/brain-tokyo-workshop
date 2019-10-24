@@ -108,6 +108,16 @@ def mnist_256():
   z = z.reshape(-1, (256))
   return z, mnist.train_labels()
 
+def make_xor():
+  ''' 
+  Creates a XOR dataset with 500 samples
+  [samples x features]  ([N X 2])
+  '''    
+  rng = np.random.RandomState(0)
+  X = rng.rand(500, 2)
+  Y = np.logical_xor(X[:, 0] > 0.5, X[:, 1] > 0.5).astype(int)
+  return X, Y
+
 
 def preprocess(img,size, patchCorner=(0,0), patchDim=None, unskew=True):
   """

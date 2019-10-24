@@ -79,6 +79,24 @@ label = [item for sublist in L for item in sublist]
 mnist256 = mnist256._replace(in_out_labels=label)
 games['mnist256'] = mnist256
 
+# > XOR data set
+xor_class = Game(env_name='Classify_xor',
+  actionSelect='softmax', # all, soft, hard
+  input_size=2,
+  output_size=2,
+  time_factor=0,
+  layers=None,
+  i_act=np.full(2,1),
+  h_act=[1,3,4,5,6,7,8,9,10], # No step function
+  o_act=np.full(2,1),
+  weightCap = 2.0,
+  noise_bias=0.0,
+  output_noise=[False, False, False],
+  max_episode_length = 0,
+  in_out_labels = ['in0', 'in1', 'out0', 'out1']
+)
+games['xor'] = xor_class
+
 
 # -- Cart-pole Swingup --------------------------------------------------- -- #
 
