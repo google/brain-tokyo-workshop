@@ -51,6 +51,8 @@ class Ind():
     self.rank    = []
     self.birth   = []
     self.species = []
+    # Convert genomes to weight matrices
+    self.express()
 
   def nConns(self):
     """Returns number of active connections

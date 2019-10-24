@@ -16,7 +16,7 @@ from .ind import Ind
 class Wann():
   """WANN main class. Evolves population given fitness values of individuals.
   """
-  def __init__(self, hyp):
+  def __init__(self, hyp, verbose=False):
     """Intialize WANN algorithm with hyperparameters
     Args:
       hyp - (dict) - algorithm hyperparameters
@@ -39,6 +39,8 @@ class Wann():
     self.species = []  # Current species   
     self.innov = []    # Innovation number (gene Id)
     self.gen = 0
+    
+    self.verbose = verbose
 
   ''' Subfunctions '''
   from ._variation import evolvePop, recombine, crossover,\

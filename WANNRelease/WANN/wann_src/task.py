@@ -10,7 +10,7 @@ from .ind import *
 class Task():
   """Problem domain to be solved by neural network. Uses OpenAI Gym patterns.
   """ 
-  def __init__(self, game, paramOnly=False, nReps=1): 
+  def __init__(self, game, paramOnly=False, nReps=1, verbose=False): 
     """Initializes task environment
   
     Args:
@@ -38,6 +38,7 @@ class Task():
     # Special needs...
     self.needsClosed = (game.env_name.startswith("CartPoleSwingUp"))    
   
+    self.verbose = verbose
 
   def testInd(self, wVec, aVec, view=False,seed=-1):
     """Evaluate individual on task

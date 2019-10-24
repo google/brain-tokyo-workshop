@@ -1,7 +1,7 @@
 import numpy as np
 import itertools
 from .ind import Ind, getLayer, getNodeOrder
-
+import copy
 
 def evolvePop(self):
   """ Evolves new population from existing species.
@@ -160,16 +160,25 @@ def mutAddNode(self, connG, nodeG, innov, gen):
     innov    - (np_array) - updated innovation record
 
   """
+  connG = connG.copy()
+  nodeG = nodeG.copy()
+  innov = innov.copy()
+  
   p = self.p
   nextInnovNum = innov[0,-1]+1
      
   # Choose connection to split
   connActive = np.where(connG[4,:] == 1)[0]
   if len(connActive) < 1:
+    if self.verbose:
+      print("Unable to split: no active connections")
     return connG, nodeG, innov # No active connections, nothing to split
+
+  # Choose a connection at random to split (and a new node)
   connSplit  = connActive[np.random.randint(len(connActive))]
   
   # Create new node
+  # Randomly choose a new activation
   newActivation = p['ann_actRange'][np.random.randint(len(p['ann_actRange']))]
   newNodeId = int(max(innov[2,:])+1) # next node id is a running counter
   newNode = np.array([[newNodeId, 3, newActivation]]).T
@@ -244,6 +253,10 @@ def mutAddConn(self, connG, nodeG, innov, gen):
     innov    - (np_array) - updated innovation record
 
   """
+  connG = connG.copy()
+  nodeG = nodeG.copy()
+  innov = innov.copy()
+  
   nIns = len(nodeG[0,nodeG[1,:] == 1]) + len(nodeG[0,nodeG[1,:] == 4])
   nOuts = len(nodeG[0,nodeG[1,:] == 2])
   order, wMat = getNodeOrder(nodeG, connG)   # Topological Sort of Network
@@ -260,6 +273,7 @@ def mutAddConn(self, connG, nodeG, innov, gen):
   nodeKey = np.c_[nodeG[0,order], L] # Assign Layers
 
   sources = np.random.permutation(len(nodeKey))
+  numConnAdded = 0
   for src in sources:
     srcLayer = nodeKey[src,1]
     dest = np.where(nodeKey[:,1] > srcLayer)[0]
@@ -278,6 +292,7 @@ def mutAddConn(self, connG, nodeG, innov, gen):
     # Add a random valid connection
     np.random.shuffle(dest)
     if len(dest)>0:  # (if there is one)
+      numConnAdded += 1
       connNew = np.empty((5,1))
       connNew[0] = innov[0,-1]+1 # Increment innovation counter
       connNew[1] = nodeKey[src,0]
@@ -290,7 +305,8 @@ def mutAddConn(self, connG, nodeG, innov, gen):
       newInnov = np.hstack((connNew[0:3].flatten(), -1, gen))
       innov = np.hstack((innov,newInnov[:,None]))
       break;
-
+  if self.verbose:
+    print("Added %d new connection(s)" % numConnAdded)
   return connG, innov
 
 
@@ -327,7 +343,7 @@ def topoMutate(self,child,innov,gen):
       innov   - (np_array) - innovation record
 
   """
-
+  child = copy.deepcopy(child)
   # Readability
   p = self.p  
   nConn = np.shape(child.conn)[1]
@@ -350,14 +366,20 @@ def topoMutate(self,child,innov,gen):
 
   # Add Connection
   if choice is 1:
+    if self.verbose:
+      print("Choice: add connection")
     connG, innov = self.mutAddConn(connG, nodeG, innov, gen)  
 
   # Add Node
   elif choice is 2:
+    if self.verbose:
+      print("Choice: add node")
     connG, nodeG, innov = self.mutAddNode(connG, nodeG, innov, gen)
 
   # Enable Connection
   elif choice is 3:
+    if self.verbose:
+      print("Choice: enable connection")
     disabled = np.where(connG[4,:] == 0)[0]
     if len(disabled) > 0:
       enable = np.random.randint(len(disabled))
@@ -365,6 +387,8 @@ def topoMutate(self,child,innov,gen):
 
   # Mutate Activation
   elif choice is 4:
+    if self.verbose:
+      print("Choice: mutate activation")
     start = 1+child.nInput + child.nOutput
     end = nodeG.shape[1]           
     if start != end:
@@ -375,6 +399,8 @@ def topoMutate(self,child,innov,gen):
   child.conn = connG
   child.node = nodeG
   child.birth = gen
+  # convert genomes to weight matrices
+  child.express()
 
   return child, innov
 
