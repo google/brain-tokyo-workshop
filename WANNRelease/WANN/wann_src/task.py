@@ -38,6 +38,7 @@ class Task():
     # Special needs...
     self.needsClosed = (game.env_name.startswith("CartPoleSwingUp"))    
   
+    self.wVals = None
     self.verbose = verbose
 
   def testInd(self, wVec, aVec, view=False,seed=-1):
@@ -111,6 +112,37 @@ class Task():
     wMat = np.copy(cMat) * wVal 
     return wMat
 
+  def getDistFitnessInd(self, ind, hyp, seed=0, verbose=False):        
+    wVec   = ind.wMat.flatten()
+    aVec   = ind.aVec.flatten()
+        
+    reward = self.getDistFitness(wVec,aVec,hyp,seed=seed)
+    return reward
+
+
+  def evaluatePop(self, pop, hyp, sameSeedForEachIndividual=True):    
+    # Set same seed for each individual
+    if sameSeedForEachIndividual is False:
+        seed = np.random.randint(1000, size=len(pop))
+    else:
+        seed = np.random.randint(1000)
+    
+    # Get reward for each individual in the population
+    reward = np.empty( (len(pop),hyp['alg_nVals']), dtype=np.float64)
+    for i in range(len(pop)):
+      if self.verbose:
+        print("Evaluating Individual {}".format(i))
+      ind = pop[i]
+      wVec   = ind.wMat.flatten()
+      aVec   = ind.aVec.flatten()
+        
+      if sameSeedForEachIndividual is False:
+        result = self.getDistFitness(wVec,aVec,hyp,seed=seed.item(i))
+      else:
+        result = self.getDistFitness(wVec,aVec,hyp,seed=seed)
+      reward[i,:] = result
+    return reward
+
 
   def getDistFitness(self, wVec, aVec, hyp, \
                     seed=-1,nRep=False,nVals=6,view=False,returnVals=False):
@@ -142,6 +174,8 @@ class Task():
       wVals = np.array((-2,-1.0,-0.5,0.5,1.0,2))
     else:
       wVals = np.linspace(-self.absWCap, self.absWCap ,nVals)
+    
+    self.wVals = wVals
 
 
     # Get reward from 'reps' rollouts -- test population on same seeds

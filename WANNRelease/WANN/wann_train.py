@@ -56,7 +56,7 @@ def gatherData(data,wann,gen,hyp,savePop=False):
   data.gatherData(wann.pop, wann.species)
   if (gen%hyp['save_mod']) is 0:
     #data = checkBest(data, bestReps=16)
-    data = checkBest(data)
+    data = checkBest(data, hyp)
     data.save(gen)
 
   if savePop is True: # Get a sample pop to play with in notebooks    
@@ -68,7 +68,7 @@ def gatherData(data,wann,gen,hyp,savePop=False):
 
   return data
 
-def checkBest(data):
+def checkBest(data, hyp):
   """Checks better performing individual if it performs over many trials.
   Test a new 'best' individual with many different seeds to see if it really
   outperforms the current best.
@@ -82,11 +82,17 @@ def checkBest(data):
 
   * This is a bit hacky, but is only for data gathering, and not optimization
   """
-  global filename, hyp
   if data.newBest is True:
-    bestReps = max(hyp['bestReps'], (nWorker-1))
+    if hyp['MPIexec']:
+      bestReps = max(hyp['bestReps'], (nWorker-1))
+    else:
+      bestReps = hyp['bestReps']
     rep = np.tile(data.best[-1], bestReps)
-    fitVector = batchMpiEval(rep, sameSeedForEachIndividual=False)
+    if hyp['MPIexec']:
+      fitVector = batchMpiEval(rep, sameSeedForEachIndividual=False)
+    else:
+      task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
+      fitVector = task.evaluatePop(rep, hyp, sameSeedForEachIndividual=False)
     trueFit = np.mean(fitVector)
     if trueFit > data.best[-2].fitness:  # Actually better!      
       data.best[-1].fitness = trueFit

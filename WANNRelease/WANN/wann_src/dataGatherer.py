@@ -77,9 +77,11 @@ class DataGatherer():
     # ------------------------------------------------------------------------ 
 
   def display(self):
-    return    "|---| Elite Fit: " + '{:.2f}'.format(self.fit_max[-1]) \
-         + " \t|---| Best Fit:  "  + '{:.2f}'.format(self.fit_top[-1]) \
-         + " \t|---| Peak Fit:  "  + '{:.2f}'.format(self.fit_peak[-1])
+    return    "| Elite Fit: " + '{:.2f}'.format(self.fit_max[-1]) \
+         + " | Best Fit:  "  + '{:.2f}'.format(self.fit_top[-1]) \
+         + " | Best FitMax:  "  + '{:.2f}'.format(self.fit_peak[-1]) \
+         + " | Med Node:  "  + '{:.2f}'.format(self.node_med[-1]) \
+         + " | Med Conn:  "  + '{:.2f}'.format(self.conn_med[-1])
 
   def save(self, gen=(-1), saveFullPop=False):
     ''' Save data to disk '''

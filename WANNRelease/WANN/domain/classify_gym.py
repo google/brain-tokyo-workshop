@@ -11,7 +11,7 @@ import math
 
 class ClassifyEnv(gym.Env):
 
-  def __init__(self, trainSet, target):
+  def __init__(self, trainSet, target, loss_type='acc'):
     """
     Data set is a tuple of 
     [0] input data: [nSamples x nInputs]
@@ -39,6 +39,10 @@ class ClassifyEnv(gym.Env):
     self.state = None
     self.trainOrder = None
     self.currIndx = None
+    
+    if loss_type not in ('acc','log_likelihood'):
+        raise ValueError("Invalid loss type: {}".format(loss_type))
+    self.loss_type = loss_type
 
   def seed(self, seed=None):
     ''' Randomly select from training set'''
@@ -62,9 +66,15 @@ class ClassifyEnv(gym.Env):
     y = self.target[self.currIndx]
     m = y.shape[0]
 
-    log_likelihood = -np.log(action[range(m),y])
-    loss = np.sum(log_likelihood) / m
-    reward = -loss
+    if self.loss_type == 'acc':
+        # Reward as accuracy
+        y_pred = np.argmax(action, axis=1)
+        acc = np.sum(y == y_pred) / len(y_pred)
+        reward = acc
+    elif self.loss_type == 'log_likelihood':
+        log_likelihood = -np.log(action[range(m),y])
+        loss = np.sum(log_likelihood) / m
+        reward = -loss
 
     if self.t_limit > 0: # We are doing batches
       reward *= (1/self.t_limit) # average

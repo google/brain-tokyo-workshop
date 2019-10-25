@@ -186,6 +186,9 @@ def getLayer(wMat):
   return layer-1
 
 
+def getNumLayers(wMat):
+  return np.max(getLayer(wMat))
+
 # -- ANN Activation ------------------------------------------------------ -- #
 
 def act(weights, aVec, nInput, nOutput, inPattern):
