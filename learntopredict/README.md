@@ -23,3 +23,7 @@ There are 3 different environments and 3 different experimental setups, that cor
 Note that the infrastructure is forked from [estool](https://github.com/hardmaru/estool), and the software configuration is based on the Notes sectin in estool (they are kind of outdated, but we stuck with older versions since they worked).
 
 This repo will not be an ongoing software project, and is basicallyl a one-off set of code for the experiments in our paper. We don't intend to upgrade, maintain, or extend it here.
+
+## Disclaimer
+
+This is not an official Google product.
