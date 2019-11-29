@@ -14,9 +14,15 @@ This repo contains research workshop materials released by the Google Brain team
 
 [Link to Article](https://weightagnostic.github.io/) ([pdf version](https://arxiv.org/abs/1906.04358))
 
-### Learning to Predict ###
+### Learning to Predict Without Looking Ahead: World Models Without Forward Prediction ###
 
-<video autoplay muted playsinline loop style="display: block; margin: auto; width: 50%;"><source src="https://learningtopredict.github.io/assets/mp4/learncartpole5.mp4" type="video/mp4"/></video>
+<p align="left">
+  <img width="50%" src="learntopredict/assets/learningtopredict.gif">
+</p>
+
+[Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/learntopredict)
+
+[Link to Article](https://learningtopredict.github.io/) ([pdf version](https://arxiv.org/abs/1910.13038))
 
 ## Disclaimer
 
