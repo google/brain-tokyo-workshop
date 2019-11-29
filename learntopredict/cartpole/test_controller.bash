@@ -1,0 +1,1 @@
+python model.py cartpole_swingup_harder log/split_controller.json > log/test_controller.txt
