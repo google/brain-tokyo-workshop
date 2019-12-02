@@ -1,6 +1,6 @@
 # Brain Tokyo Workshop 🧠🗼
 
-This repo contains research workshop materials released by the Google Brain team in Tokyo.
+This repo contains research workshop materials released by members of the Google Brain team in Tokyo.
 
 ## Past Projects ##
 
