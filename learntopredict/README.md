@@ -24,6 +24,21 @@ Note that the infrastructure is forked from [estool](https://github.com/hardmaru
 
 This repo will not be an ongoing software project, and is basicallyl a one-off set of code for the experiments in our paper. We don't intend to upgrade, maintain, or extend it here.
 
+## Citation
+
+For attribution in academic contexts, please cite this work as
+
+```
+@article{learningtopredict2019,
+  author = {Freeman, C Daniel and Luke Metz and David Ha},
+  title  = {Learning to Predict Without Looking Ahead: World Models Without Forward Prediction},
+  eprint = {arXiv:1910.13038},
+  url    = {https://learningtopredict.github.io},
+  note   = "\url{https://learningtopredict.github.io}",
+  year   = {2019}
+}
+```
+
 ## Disclaimer
 
 This is not an official Google product.
