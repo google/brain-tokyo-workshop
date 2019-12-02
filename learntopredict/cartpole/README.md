@@ -1,4 +1,4 @@
-# Learn M and C at the same time as one agent (avoiding separate inner and outer training meta-learning loops)
+# Learn M and C at the same time as one agent
 
 Experiment trying to learn a world model of swing up cartpole
 
