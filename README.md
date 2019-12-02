@@ -17,7 +17,7 @@ This repo contains research workshop materials released by the Google Brain team
 ### Learning to Predict Without Looking Ahead: World Models Without Forward Prediction ###
 
 <p align="left">
-  <img width="50%" src="learntopredict/assets/learningtopredict.gif">
+  <img width="50%" src="learntopredict/assets/learntopredict.gif">
 </p>
 
 [Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/learntopredict)
