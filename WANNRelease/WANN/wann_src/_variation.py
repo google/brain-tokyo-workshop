@@ -369,7 +369,7 @@ def topoMutate(self,child,innov,gen):
     end = nodeG.shape[1]           
     if start != end:
       mutNode = np.random.randint(start,end)
-      newActPool = listXor([int(nodeG[2,mutNode])], p['ann_actRange'])
+      newActPool = listXor([int(nodeG[2,mutNode])], list(p['ann_actRange']))
       nodeG[2,mutNode] = int(newActPool[np.random.randint(len(newActPool))])
 
   child.conn = connG
