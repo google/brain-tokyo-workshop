@@ -24,6 +24,14 @@ This repo contains research materials released by members of the Google Brain te
 
 [Link to Article](https://learningtopredict.github.io/) ([pdf version](https://arxiv.org/abs/1910.13038))
 
+### Neuroevolution of Self-Interpretable Agents ###
+
+![attentionagent](https://storage.googleapis.com/quickdraw-models/sketchRNN/attention/assets/card/attentionagent.gif)  
+
+[Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/AttentionAgent)
+
+[Link to Article](https://attentionagent.github.io/) ([pdf version](https://arxiv.org/abs/2003.08165))
+
 ## Disclaimer
 
 This is not an official Google product.
