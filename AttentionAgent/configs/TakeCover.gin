@@ -1,0 +1,40 @@
+import algorithms.cma
+import misc.utility
+import solutions.torch_solutions
+import tasks.gym_task
+
+
+# CMA configurations
+cma.CMA.population_size = 256
+cma.CMA.init_sigma = 0.1
+
+cma.CMAMaster.seed = 0
+cma.CMAMaster.n_repeat = 5
+cma.CMAMaster.max_iter = 10000
+cma.CMAMaster.eval_every_n_iter = 10
+cma.CMAMaster.n_eval_roll_outs = 100
+
+utility.get_es_master.es_algorithm = @cma.CMAMaster
+utility.get_es_worker.es_algorithm = @cma.CMAWorker
+
+
+# Solution configurations
+torch_solutions.VisionTaskSolution.image_size = 96
+torch_solutions.VisionTaskSolution.query_dim = 4
+torch_solutions.VisionTaskSolution.output_dim = 1
+torch_solutions.VisionTaskSolution.output_activation = "tanh"
+torch_solutions.VisionTaskSolution.num_hiddens = [16,]
+torch_solutions.VisionTaskSolution.l2_coefficient = 0
+torch_solutions.VisionTaskSolution.patch_size = 7
+torch_solutions.VisionTaskSolution.patch_stride = 4
+torch_solutions.VisionTaskSolution.top_k = 10
+torch_solutions.VisionTaskSolution.data_dim = 3
+torch_solutions.VisionTaskSolution.activation = "tanh"
+torch_solutions.VisionTaskSolution.normalize_positions = True
+torch_solutions.VisionTaskSolution.use_lstm_controller = True
+utility.create_solution.solution_loader = @torch_solutions.VisionTaskSolution()
+
+
+# Task configurations
+utility.create_task.render = False
+utility.create_task.task_loader = @gym_task.TakeCoverTask()

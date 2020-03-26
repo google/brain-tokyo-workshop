@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package evolution_algorithms;
+
+// Messages for CMA.
+message CMAParameters {
+
+    repeated double parameters = 1;
+}
+
+// Common message for roll-out.
+message RollOutRequest {
+
+    int32 roll_out_index = 1;
+    int32 env_seed = 2;
+    bool evaluate = 3;
+
+    CMAParameters cma_parameters = 4;
+}
+
+message RollOutResponse {
+
+    int32 roll_out_index = 1;
+    double fitness = 2;
+}
+
+// RPC service for roll-outs.
+service RollOutService {
+
+  rpc performRollOut(RollOutRequest) returns (RollOutResponse) {}
+}
+
+
+// Message for parameter synchronization request.
+message ParamSyncRequest {}
+
+// Message for parameter synchronization response.
+message ParamSyncResponse {
+
+    repeated double parameters = 1;
+}
+
+// RPC service for parameter synchronization.
+service ParameterSyncService {
+
+    rpc syncParameter(ParamSyncRequest) returns (ParamSyncResponse) {}
+}

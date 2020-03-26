@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: master-%EXPERIMENT%
+spec:
+  selector:
+    matchLabels:
+      app: master-%EXPERIMENT%
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: master-%EXPERIMENT%
+    spec:
+
+      volumes:
+      - name: shared-data
+        emptyDir: {}
+
+      containers:
+      - name: master-%EXPERIMENT%
+        image: %IMAGE%
+        volumeMounts:
+        - name: shared-data
+          mountPath: /var/log/es
+        command: ["/bin/sh", "-c"]
+        args: [%CMD%]
+
+      - name: nginx-container
+        image: nginx
+        volumeMounts:
+        - name: shared-data
+          mountPath: /usr/share/nginx/html
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: master-%EXPERIMENT%-service
+spec:
+  selector:
+    app: master-%EXPERIMENT%
+  ports:
+  - name: http
+    port: 80
+  type: LoadBalancer

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Training Progress</title>
+</head>
+<body>
+    <img src="log/reward_vs_iteration.png" />
+    <img src="log/reward_vs_time.png" />
+    <p>
+        <a href="log/best_model.npz" download>
+            Download best model.
+        </a>
+        <br>
+        <a href="log/scores.csv" download>
+            Download scores.
+        </a>
+        <br>
+        <a href="log/log.txt" download>
+            Download log.
+        </a>
+        <br>
+        <a href="log/config.gin" download>
+            Download experimental config.
+        </a>
+    </p>
+    <p>
+        Use the following commands to download the model from a specified iteration.
+        <br>
+        <code>
+            <p>
+                POD_NAME=$(kubectl get pod | grep es-master | awk '{print $1}')<br>
+                # E.g. Download model at iteration 1000.<br>
+                kubectl cp $POD_NAME:/var/log/es/log/model_1000.npz $HOME/
+            </p>
+        </code>
+    </p>
+</body>
+</html>

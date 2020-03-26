@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-%EXPERIMENT%
+spec:
+  selector:
+    matchLabels:
+      app: worker-%EXPERIMENT%
+  replicas: %REPLICA%
+  template:
+    metadata:
+      labels:
+        app: worker-%EXPERIMENT%
+    spec:
+      containers:
+      - name: worker-%EXPERIMENT%
+        image: %IMAGE%
+        resources:
+          requests:
+            memory: %MEM%
+            cpu: %CPU%
+          limits:
+            memory: %MEM_LIMIT%
+            cpu: %CPU_LIMIT%
+        ports:
+        - containerPort: 20000
+        command: ["/bin/sh", "-c"]
+        args: [%CMD%]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: worker-%EXPERIMENT%-service
+spec:
+  selector:
+    app: worker-%EXPERIMENT%
+  clusterIP: None
+  ports:
+  - name: grpc
+    port: 20000
