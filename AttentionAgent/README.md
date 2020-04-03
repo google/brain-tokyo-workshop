@@ -23,6 +23,7 @@ docker run -it braintok/self-attention-agent:{tag} /bin/bash
 
 ## Evaluate pre-trained models
 
+### Test models in the original environment
 We have included our pre-trained models for both CarRacing and DoomTakeCover in this repository.  
 You can run the following commands to evaluate the trained agent, change `pretrained/CarRacing` to `pretrained/TakeCover` to see results in DoomTakeCover.
 ```
@@ -37,6 +38,21 @@ python3 test_solution.py --log-dir=pretrained/CarRacing/ --render --overplot
 
 # Evaluate with GUI, save videos and screenshots.
 python3 test_solution.py --log-dir=pretrained/CarRacing/ --render --overplot --save-screens
+```
+
+### Test models in the modified environments
+Besides the original environment, we have tested our model in some modified environments in the paper.  
+You can follow the instructions below to reproduce those results, the visual effect should be similar to those in the gifs.    
+
+#### CarRacing 
+![CarRacingExtensions](https://storage.googleapis.com/quickdraw-models/sketchRNN/attention/assets/card/CarRacingExtensions1.gif)
+
+The configuration file `pretrained/CarRacing/config.gin` serves as an effortless method to switch between environments.  
+Change `utility.create_task.modification = "original"` to 
+`utility.create_task.modification = "mod"` where `mod` is `color`, `bar` or `blob`.
+Save the file, then run the following command:
+```
+python3 test_solution.py --log-dir=pretrained/CarRacing/ --render --overplot
 ```
 
 ## Training
