@@ -36,5 +36,6 @@ utility.create_solution.solution_loader = @torch_solutions.VisionTaskSolution()
 
 
 # Task configurations
+utility.create_task.modification = "original"
 utility.create_task.render = False
 utility.create_task.task_loader = @gym_task.TakeCoverTask()
