@@ -45,7 +45,7 @@ Besides the original environment, we have tested our model in some modified envi
 You can follow the instructions below to reproduce those results, the visual effect should be similar to those in the gifs.    
 
 #### CarRacing 
-![CarRacingExtensions](https://storage.googleapis.com/quickdraw-models/sketchRNN/attention/assets/card/CarRacingExtensions1.gif)
+![CarRacingExtensions](https://storage.googleapis.com/gcp_blog/img/CarRacingVariants.gif)
 
 The configuration file `pretrained/CarRacing/config.gin` serves as an effortless method to switch between environments.  
 Change `utility.create_task.modification = "original"` to 
@@ -53,6 +53,16 @@ Change `utility.create_task.modification = "original"` to
 Save the file, then run the following command:
 ```
 python3 test_solution.py --log-dir=pretrained/CarRacing/ --render --overplot
+```
+
+#### DoomTakeCover
+![TakeCoverExtensions](https://storage.googleapis.com/gcp_blog/img/TakeCoverVariants.gif)
+
+In `pretrained/TakeCover/config.gin`, change `utility.create_task.modification = "original"` to 
+`utility.create_task.modification = "mod"` where `mod` is `wall`, `floor` or `text`.  
+Save the file, then run the following command:
+```
+python3 test_solution.py --log-dir=pretrained/TakeCover/ --render --overplot
 ```
 
 ## Training
