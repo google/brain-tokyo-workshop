@@ -6,6 +6,7 @@ import numpy as np
 import os
 import tasks.abc_task
 import time
+import car_racing_variants
 
 
 class GymTask(tasks.abc_task.BaseTask):
@@ -150,7 +151,6 @@ class CarRacingTask(GymTask):
         return done or too_many_out_of_tracks or too_many_steps
 
     def create_task(self, **kwargs):
-        self._env = gym.make('CarRacing-v0')
         if 'render' in kwargs:
             self._render = kwargs['render']
         if 'out_of_track_cap' in kwargs:
@@ -159,6 +159,17 @@ class CarRacingTask(GymTask):
             self._max_steps = kwargs['max_steps']
         if 'logger' in kwargs:
             self._logger = kwargs['logger']
+
+        env_string = 'CarRacing-v0'
+        if 'modification' in kwargs:
+            if kwargs['modification'] == 'color':
+                env_string = 'CarRacingColor-v0'
+            elif kwargs['modification'] == 'bar':
+                env_string = 'CarRacingBar-v0'
+            elif kwargs['modification'] == 'blob':
+                env_string = 'CarRacingBlob-v0'
+        self._logger.info('env_string: {}'.format(env_string))
+        self._env = gym.make(env_string)
         return self
 
     def set_video_dir(self, video_dir):

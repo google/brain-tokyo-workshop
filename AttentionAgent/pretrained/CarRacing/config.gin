@@ -36,6 +36,7 @@ utility.create_solution.solution_loader = @torch_solutions.VisionTaskSolution()
 
 
 # Task configurations
+utility.create_task.modification = "original"
 utility.create_task.out_of_track_cap = 20
 utility.create_task.max_steps = 1000
 utility.create_task.task_loader = @gym_task.CarRacingTask()
