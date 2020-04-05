@@ -32,6 +32,9 @@ In this modification, we sample two scalar noises from the interval [-0.2, 0.2] 
 | Test only | Score in CarRacing-v0 | Score in CarRacingColor-v0 | Credit |
 |-----------|-----------------------|----------------------------|---------
 | Yes | <img src="https://render.githubusercontent.com/render/math?math=914 \pm 15"> | <img src="https://render.githubusercontent.com/render/math?math=866 \pm 112"> | [AttentionAgent](https://github.com/google/brain-tokyo-workshop/tree/master/AttentionAgent)|
+| Yes | <img src="https://render.githubusercontent.com/render/math?math=901 \pm 37"> | <img src="https://render.githubusercontent.com/render/math?math=655 \pm 353"> | [WorldModel](https://github.com/hardmaru/WorldModelsExperiments)|
+| Yes | <img src="https://render.githubusercontent.com/render/math?math=865 \pm 159"> | <img src="https://render.githubusercontent.com/render/math?math=505 \pm 464"> | [PPO](https://github.com/xtma/pytorch_car_caring)
+| Yes | <img src="https://render.githubusercontent.com/render/math?math=859 \pm 79"> | <img src="https://render.githubusercontent.com/render/math?math=442 \pm 362"> | [GA](https://github.com/sebastianrisi/ga-world-models)|
 
 ### CarRacingColor3-v0
 
@@ -43,6 +46,9 @@ In this modification, we sample two 3D noise vectors from the interval [-0.2, 0.
 | Test only | Score in CarRacing-v0 | Score in CarRacingColor3-v0 | Credit |
 |-----------|-----------------------|----------------------------|---------
 | Yes | <img src="https://render.githubusercontent.com/render/math?math=914 \pm 15"> | <img src="https://render.githubusercontent.com/render/math?math=673 \pm 372"> | [AttentionAgent](https://github.com/google/brain-tokyo-workshop/tree/master/AttentionAgent)|
+| Yes | <img src="https://render.githubusercontent.com/render/math?math=865 \pm 159"> | <img src="https://render.githubusercontent.com/render/math?math=579 \pm 444"> | [PPO](https://github.com/xtma/pytorch_car_caring)
+| Yes | <img src="https://render.githubusercontent.com/render/math?math=901 \pm 37"> | <img src="https://render.githubusercontent.com/render/math?math=394 \pm 413"> | [WorldModel](https://github.com/hardmaru/WorldModelsExperiments)|
+| Yes | <img src="https://render.githubusercontent.com/render/math?math=859 \pm 79"> | <img src="https://render.githubusercontent.com/render/math?math=160 \pm 304"> | [GA](https://github.com/sebastianrisi/ga-world-models)|
 
 ### CarRacingBar-v0
 
@@ -55,6 +61,10 @@ However, no critical information is lost in this modification.
 | Test only | Score in CarRacing-v0 | Score in CarRacingBar-v0 | Credit |
 |-----------|-----------------------|----------------------------|---------
 | Yes | <img src="https://render.githubusercontent.com/render/math?math=914 \pm 15"> | <img src="https://render.githubusercontent.com/render/math?math=900 \pm 35"> | [AttentionAgent](https://github.com/google/brain-tokyo-workshop/tree/master/AttentionAgent)|
+| Yes | <img src="https://render.githubusercontent.com/render/math?math=859 \pm 79"> | <img src="https://render.githubusercontent.com/render/math?math=675 \pm 254"> | [GA](https://github.com/sebastianrisi/ga-world-models)|
+| Yes | <img src="https://render.githubusercontent.com/render/math?math=865 \pm 159"> | <img src="https://render.githubusercontent.com/render/math?math=615 \pm 217"> | [PPO](https://github.com/xtma/pytorch_car_caring)
+| Yes | <img src="https://render.githubusercontent.com/render/math?math=901 \pm 37"> | <img src="https://render.githubusercontent.com/render/math?math=166 \pm 137"> | [WorldModel](https://github.com/hardmaru/WorldModelsExperiments)|
+
 
 ### CarRacingBlob-v0
 
@@ -67,6 +77,9 @@ Because the car runs counterclockwisely, we put the blob on the car's right side
 | Test only | Score in CarRacing-v0 | Score in CarRacingBlob-v0 | Credit |
 |-----------|-----------------------|----------------------------|---------
 | Yes | <img src="https://render.githubusercontent.com/render/math?math=914 \pm 15"> | <img src="https://render.githubusercontent.com/render/math?math=898 \pm 53"> | [AttentionAgent](https://github.com/google/brain-tokyo-workshop/tree/master/AttentionAgent)|
+| Yes | <img src="https://render.githubusercontent.com/render/math?math=865 \pm 159"> | <img src="https://render.githubusercontent.com/render/math?math=855 \pm 172"> | [PPO](https://github.com/xtma/pytorch_car_caring)
+| Yes | <img src="https://render.githubusercontent.com/render/math?math=859 \pm 79"> | <img src="https://render.githubusercontent.com/render/math?math=833 \pm 135"> | [GA](https://github.com/sebastianrisi/ga-world-models)|
+| Yes | <img src="https://render.githubusercontent.com/render/math?math=901 \pm 37"> | <img src="https://render.githubusercontent.com/render/math?math=446 \pm 299"> | [WorldModel](https://github.com/hardmaru/WorldModelsExperiments)|
 
 ### CarRacingNoise-v0
 
