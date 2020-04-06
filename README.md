@@ -31,6 +31,9 @@ This repo contains research materials released by members of the Google Brain te
 [Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/AttentionAgent)
 ([Code for CarRacing Variants](https://github.com/google/brain-tokyo-workshop/tree/master/CarRacingExtension))
 
+![carracingvariants](https://storage.googleapis.com/quickdraw-models/sketchRNN/attention/assets/card/CarRacingExtensions2.gif)
+*Extensions to CarRacing-v0 environment*
+
 [Link to Article](https://attentionagent.github.io/) ([pdf version](https://arxiv.org/abs/2003.08165))
 
 ## Disclaimer
