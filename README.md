@@ -7,7 +7,7 @@ This repo contains research materials released by members of the Google Brain te
 ### Weight Agnostic Neural Networks ###
 
 <p align="left">
-  <img width="50%" src="WANNRelease/prettyNEAT/demo/img/swing.gif">
+  <img width="50%" src="WANNRelease/prettyNEAT/demo/img/swing.gif"></img>
 </p>
 
 [Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/WANNRelease)
@@ -17,7 +17,7 @@ This repo contains research materials released by members of the Google Brain te
 ### Learning to Predict Without Looking Ahead: World Models Without Forward Prediction ###
 
 <p align="left">
-  <img width="50%" src="learntopredict/assets/learntopredict.gif">
+  <img width="50%" src="learntopredict/assets/learntopredict.gif"></img>
 </p>
 
 [Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/learntopredict)
@@ -31,8 +31,10 @@ This repo contains research materials released by members of the Google Brain te
 [Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/AttentionAgent)
 ([Code for CarRacing Variants](https://github.com/google/brain-tokyo-workshop/tree/master/CarRacingExtension))
 
-![carracingvariants](https://storage.googleapis.com/quickdraw-models/sketchRNN/attention/assets/card/CarRacingExtensions2.gif)
-*Extensions to CarRacing-v0 environment*
+<p align="left">
+  <img width="50%" src="https://storage.googleapis.com/quickdraw-models/sketchRNN/attention/assets/card/CarRacingExtensions2.gif"></img><br/>
+  <i>Extensions to CarRacing-v0 environment released for future research.</i>
+</p>
 
 [Link to Article](https://attentionagent.github.io/) ([pdf version](https://arxiv.org/abs/2003.08165))
 
