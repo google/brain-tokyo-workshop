@@ -32,7 +32,7 @@ This repo contains research materials released by members of the Google Brain te
 ([Code for CarRacing Variants](https://github.com/google/brain-tokyo-workshop/tree/master/CarRacingExtension))
 
 <p align="left">
-  <img width="50%" src="https://storage.googleapis.com/quickdraw-models/sketchRNN/attention/assets/card/CarRacingExtensions2.gif"></img><br/>
+  <img width="50%" src="https://storage.googleapis.com/quickdraw-models/sketchRNN/attention/assets/card/attentionagent.gif"></img><br/>
   <i>Extensions to CarRacing-v0 environment released for future research.</i>
 </p>
 
