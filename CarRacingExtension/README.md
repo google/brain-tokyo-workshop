@@ -1,5 +1,7 @@
 # CarRacing Variants
 
+![CarRacingVariants](https://storage.googleapis.com/quickdraw-models/sketchRNN/attention/assets/card/CarRacingExt2SmallSize.gif)  
+
 <img align="right" width="200" src="https://storage.googleapis.com/gcp_blog/img/CarRacingOriginal.gif">
 
 This repository contains various modifications of the `CarRacing-v0` OpenAI gym environment.  
