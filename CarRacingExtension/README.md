@@ -1,5 +1,7 @@
 <img align="right" width="100%" src="https://storage.googleapis.com/quickdraw-models/sketchRNN/attention/assets/card/CarRacingExt2SmallSize.gif">
 
+&nbsp;
+
 # CarRacing Variants
 
 <img align="right" width="200" src="https://storage.googleapis.com/gcp_blog/img/CarRacingOriginal.gif">
