@@ -3,7 +3,7 @@
 <img align="right" width="200" src="https://storage.googleapis.com/gcp_blog/img/CarRacingOriginal.gif">
 
 This repository contains various modifications of the `CarRacing-v0` OpenAI gym environment.  
-Unlike other gym environments for RL, the environments are for generalization tests. E.g., one trains her RL agent in `CarRacing-v0` and then test the agent's performance in the modified environments here **WITHOUT** retraining.
+Unlike other gym environments for RL, the environments are for generalization tests. E.g., one trains their RL agent in `CarRacing-v0` and then test the agent's performance in the modified environments here **WITHOUT** retraining.
 
 ## Installation
 
@@ -114,11 +114,13 @@ export CARRACING_VIDEO_DIR="{frame-dir}"
 For attribution in academic contexts, please cite this work as
 
 ```
-@online{carracingextensions,
-  year = {2020},
-  title = {CarRacing Variants},
-  author= {Yujin Tang and David Ha},
-  url = {https://github.com/google/brain-tokyo-workshop/edit/master/CarRacingExtension/},
+@inproceedings{attentionagent2020,
+  author    = {Yujin Tang and Duong Nguyen and David Ha},
+  title     = {Neuroevolution of Self-Interpretable Agents},
+  booktitle = {Proceedings of the Genetic and Evolutionary Computation Conference},
+  url       = {https://attentionagent.github.io},
+  note      = "\url{https://attentionagent.github.io}",
+  year      = {2020}
 }
 ```
 
