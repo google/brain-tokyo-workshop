@@ -5,7 +5,7 @@
 # CarRacing Variants
 
 <img align="right" width="200" src="https://storage.googleapis.com/gcp_blog/img/CarRacingOriginal.gif">
-
+<br/>
 
 This repository contains various modifications of the `CarRacing-v0` OpenAI gym environment.  
 Unlike other gym environments for RL, the environments are for generalization tests. E.g., one trains their RL agent in `CarRacing-v0` and then test the agent's performance in the modified environments here **WITHOUT** retraining.
