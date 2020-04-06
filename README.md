@@ -26,12 +26,13 @@ This repo contains research materials released by members of the Google Brain te
 
 ### Neuroevolution of Self-Interpretable Agents ###
 
-![attentionagent](https://storage.googleapis.com/quickdraw-models/sketchRNN/attention/assets/card/attentionagent.gif)  
+<img width="50%" src="https://storage.googleapis.com/quickdraw-models/sketchRNN/attention/assets/card/attentionagent.gif"></img>
 
 [Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/AttentionAgent)
 ([Code for CarRacing Variants](https://github.com/google/brain-tokyo-workshop/tree/master/CarRacingExtension))
 
-![carext](https://storage.googleapis.com/quickdraw-models/sketchRNN/attention/assets/card/CarRacingExt2SmallSize.gif)  
+<img width="50%" src="https://storage.googleapis.com/quickdraw-models/sketchRNN/attention/assets/card/CarRacingExt2SmallSize.gif"></img>
+
 
 *[Extensions](https://github.com/google/brain-tokyo-workshop/tree/master/CarRacingExtension) to CarRacing-v0 environment released for future research.*
 
