@@ -99,11 +99,11 @@ class Wann():
     outs  = (p['ann_nInput']+1) + np.arange(0,p['ann_nOutput']) # Output Ids
     
     conn = np.empty((5,nConn,))
-    conn[0,:] = np.arange(0,nConn,1)    # Connection Id
-    conn[1,:] = np.tile(ins, len(outs)) # Source Nodes
-    conn[2,:] = np.tile(outs,len(ins) ) # Destination Nodes
-    conn[3,:] = np.nan                  # Weight Value
-    conn[4,:] = 1                       # Enabled?
+    conn[0,:] = np.arange(0,nConn,1)      # Connection Id
+    conn[1,:] = np.tile(ins, len(outs))   # Source Nodes
+    conn[2,:] = np.repeat(outs,len(ins) ) # Destination Nodes
+    conn[3,:] = np.nan                    # Weight Values
+    conn[4,:] = 1                         # Enabled?
         
     # Create population of individuals (for WANN weight value doesn't matter)
     pop = []
