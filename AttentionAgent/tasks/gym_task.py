@@ -7,7 +7,7 @@ import os
 import tasks.abc_task
 import time
 import car_racing_variants
-import takecover_variants
+from takecover_variants.doom_take_cover import DoomTakeCoverEnv
 
 
 class GymTask(tasks.abc_task.BaseTask):
