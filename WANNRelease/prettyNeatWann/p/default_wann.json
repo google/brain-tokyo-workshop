@@ -4,7 +4,7 @@
     "alg_nVals": 6,
     "alg_nReps": 4,
     "alg_probMoo": 0.80,
-    "alg_act": 5,
+    "alg_act": 0,
     "alg_speciate": "none",
     "maxGen": 1024,
     "popSize": 128,
