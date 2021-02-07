@@ -4,7 +4,7 @@
 
 # CarRacing Variants
 
-<img align="right" width="200" src="https://storage.googleapis.com/gcp_blog/img/CarRacingOriginal.gif">
+<img align="right" width="200" src="https://github.com/lerrytang/public_resources/blob/main/CarRacingExtension/CarRacingOriginal.gif">
 <br/>
 
 This repository contains various modifications of the `CarRacing-v0` OpenAI gym environment.  
@@ -29,7 +29,7 @@ All scores are averages over 100 consecutive tests.
 
 ### CarRacingColor-v0
 
-<img align="right" width="200" src="https://storage.googleapis.com/gcp_blog/img/CarRacingColor1.gif">
+<img align="right" width="200" src="https://github.com/lerrytang/public_resources/blob/main/CarRacingExtension/CarRacingColor1.gif">
 
 You can create this environment with `gym.make('CarRacingColor-v0')`.  
 In this modification, we sample two scalar noises from the interval [-0.2, 0.2] and add them to the grass and lane color RGB vectors in `env.reset()`.
@@ -43,7 +43,7 @@ In this modification, we sample two scalar noises from the interval [-0.2, 0.2] 
 
 ### CarRacingColor3-v0
 
-<img align="right" width="200" src="https://storage.googleapis.com/gcp_blog/img/CarRacingColor3.gif">
+<img align="right" width="200" src="https://github.com/lerrytang/public_resources/blob/main/CarRacingExtension/CarRacingColor3.gif">
 
 You can create this environment with `gym.make('CarRacingColor3-v0')`.  
 In this modification, we sample two 3D noise vectors from the interval [-0.2, 0.2] and add them to the grass and lane color RGB vectors in `env.reset()`.
@@ -57,7 +57,7 @@ In this modification, we sample two 3D noise vectors from the interval [-0.2, 0.
 
 ### CarRacingBar-v0
 
-<img align="right" width="200" src="https://storage.googleapis.com/gcp_blog/img/CarRacingBar.gif">
+<img align="right" width="200" src="https://github.com/lerrytang/public_resources/blob/main/CarRacingExtension/CarRacingBar.gif">
 
 You can create this environment with `gym.make('CarRacingBar-v0')`.  
 In this modification, we add two vertical bars on the left and right side of such that the screen looks narrower.
@@ -73,7 +73,7 @@ However, no critical information is lost in this modification.
 
 ### CarRacingBlob-v0
 
-<img align="right" width="200" src="https://storage.googleapis.com/gcp_blog/img/CarRacingBlob.gif">
+<img align="right" width="200" src="https://github.com/lerrytang/public_resources/blob/main/CarRacingExtension/CarRacingBlob.gif">
 
 You can create this environment with `gym.make('CarRacingBlob-v0')`.  
 In this modification, we add a red blob at a fixed position in the car's frame.
@@ -88,7 +88,7 @@ Because the car runs counterclockwisely, we put the blob on the car's right side
 
 ### CarRacingNoise-v0
 
-<img align="right" width="200" src="https://storage.googleapis.com/gcp_blog/img/CarRacingNoise.gif">
+<img align="right" width="200" src="https://github.com/lerrytang/public_resources/blob/main/CarRacingExtension/CarRacingNoise.gif">
 
 You can create this environment with `gym.make('CarRacingNoise-v0')`.  
 In this modification, the grass background has been replaced with noise in RGB channels.
@@ -100,7 +100,7 @@ Notice that to learn a good RL agent in this environment is actually easy, for i
 
 ### CarRacingVideo-v0
 
-<img align="right" width="200" src="https://storage.googleapis.com/gcp_blog/img/CarRacingKOF.gif">
+<img align="right" width="200" src="https://github.com/lerrytang/public_resources/blob/main/CarRacingExtension/CarRacingKOF.gif">
 
 You can create this environment with `gym.make('CarRacingVideo-v0')`.  
 In this modification, the grass background has been replaced with frames from a user specified video.
