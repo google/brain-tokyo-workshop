@@ -338,6 +338,110 @@ class Ind():
     nOuts = len(nodeG[0,nodeG[1,:] == 2])
     order, wMat = getNodeOrder(nodeG, connG)   # Topological Sort of Network
     hMat = wMat[nIns:-nOuts,nIns:-nOuts]
+
+    # Add random connection that doesn't already exist, check if it causes recurrency
+    
+    # Set of possible connections
+    # -- Exclude output from possible sources, and inputs/bias as possible destinations
+    outputs = np.where(nodeG[1,:]==2)[0]
+    inputs  = np.hstack((np.where(nodeG[1,:]==4)[0], np.where(nodeG[1,:]==1)[0]))
+    nodeFrom = np.setxor1d(nodeG[0,:],outputs)
+    nodeTo   = np.setxor1d(nodeG[0,:],inputs)      
+        
+    r, q = np.meshgrid(nodeFrom, nodeTo, sparse=False, indexing='ij')
+    connAll = np.vstack((r.flatten(), q.flatten())) # all combination of source and destination
+      
+    # Remove already existing connections
+    connCurrent = connG[[1,2],:]
+      
+    a = connAll.T
+    b = connCurrent.T
+    intersect = np.zeros((1,len(a)), dtype=bool)[0]
+    for i in range(len(a)):
+      intersect[i] = (any((b[:]==a[i,:]).all(1)))
+    notInBoth = a[np.invert(intersect),:]
+      
+    connValid = notInBoth
+    
+    # Try possible connections, add if no cycle
+    tryOrder = np.random.permutation(len(connValid))
+
+    # Add connection and test for cycles
+    for i in range(len(tryOrder)):
+      connNew = np.empty((5,1))
+      connNew[0] = newConnId
+      connNew[1] = connValid[tryOrder[i],0]
+      connNew[2] = connValid[tryOrder[i],1]
+      connNew[3] = (np.random.rand()-0.5)*2*p['ann_absWCap']
+      connNew[4] = 1
+        
+      connAttempt = np.hstack((connG,connNew))
+      # TODO: traverse network and see if you see any nodes twice or all end at output
+      # doing an topological sort each time is very expensive in large networks!
+      testKid = Ind(connAttempt,nodeG)
+      valid = testKid.express() # <-- this does a topological sort and fails if not feed forward (change!)
+      if valid != False: # Found valid new connection
+        # Update connection genes
+        connG = connAttempt    
+        
+        # Record innovation
+        newInnov = np.hstack((connNew[0:3].flatten(), -1, gen))
+        innov = np.hstack((innov,newInnov[:,None]))
+        
+        # TODO: Check if innovation already exists      
+        break
+      else:
+        pass
+
+    return connG, innov
+
+  def mutAddConn2(self, connG, nodeG, innov, gen, p):
+    """Add new connection to genome.
+    To avoid creating recurrent connections all nodes are first sorted into
+    layers, connections are then only created from nodes to nodes of the same or
+    later layers.
+
+
+    Todo: check for preexisting innovations to avoid duplicates in same gen
+
+    Args:
+      connG    - (np_array) - connection genes
+                 [5 X nUniqueGenes] 
+                 [0,:] == Innovation Number (unique Id)
+                 [1,:] == Source Node Id
+                 [2,:] == Destination Node Id
+                 [3,:] == Weight Value
+                 [4,:] == Enabled?  
+      nodeG    - (np_array) - node genes
+                 [3 X nUniqueGenes]
+                 [0,:] == Node Id
+                 [1,:] == Type (1=input, 2=output 3=hidden 4=bias)
+                 [2,:] == Activation function (as int)
+      innov    - (np_array) - innovation record
+                 [5 X nUniqueGenes]
+                 [0,:] == Innovation Number
+                 [1,:] == Source
+                 [2,:] == Destination
+                 [3,:] == New Node?
+                 [4,:] == Generation evolved
+      gen      - (int)      - current generation
+      p        - (dict)     - algorithm hyperparameters (see p/hypkey.txt)
+
+
+    Returns:
+      connG    - (np_array) - updated connection genes
+      innov    - (np_array) - updated innovation record
+
+    """
+    if innov is None:
+      newConnId = connG[0,-1]+1
+    else:
+      newConnId = innov[0,-1]+1 
+
+    nIns = len(nodeG[0,nodeG[1,:] == 1]) + len(nodeG[0,nodeG[1,:] == 4])
+    nOuts = len(nodeG[0,nodeG[1,:] == 2])
+    order, wMat = getNodeOrder(nodeG, connG)   # Topological Sort of Network
+    hMat = wMat[nIns:-nOuts,nIns:-nOuts]
     hLay = getLayer(hMat)+1
 
     # To avoid recurrent connections nodes are sorted into layers, and connections are only allowed from lower to higher layers
