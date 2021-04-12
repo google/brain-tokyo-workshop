@@ -83,13 +83,13 @@ class Wann():
     nodeId = np.arange(0,p['ann_nInput']+ p['ann_nOutput']+1,1)
     node = np.empty((3,len(nodeId)))
     node[0,:] = nodeId
-    
+
     # Node types: [1:input, 2:hidden, 3:bias, 4:output]
     node[1,0]             = 4 # Bias
     node[1,1:p['ann_nInput']+1] = 1 # Input Nodes
     node[1,(p['ann_nInput']+1):\
            (p['ann_nInput']+p['ann_nOutput']+1)]  = 2 # Output Nodes
-    
+
     # Node Activations
     node[2,:] = p['ann_initAct']
 
@@ -132,6 +132,7 @@ class Wann():
     maxFit  = np.asarray([ind.fitMax  for ind in self.pop])
     nConns  = np.asarray([ind.nConn   for ind in self.pop])
     nConns[nConns==0] = 1 # No conns is always pareto optimal (but boring)
+    nNode = np.asarray([len(ind.node[0, :])-ind.nInput-ind.nOutput for ind in self.pop]) ## internal node + bias node
     objVals = np.c_[meanFit,maxFit,1/nConns] # Maximize
 
     # Alternate second objective
