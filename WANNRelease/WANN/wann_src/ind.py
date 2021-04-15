@@ -1,5 +1,6 @@
 import numpy as np
 import copy
+import math
 
 
 # -- Individual Class ---------------------------------------------------- -- #
@@ -52,10 +53,30 @@ class Ind():
     self.birth   = []
     self.species = []
 
-  def nConns(self):
+  def nConns(self): ## never run
     """Returns number of active connections
     """
     return int(np.sum(self.conn[4,:]))
+
+  def entropy(self):
+    adjMat = np.zeros((np.shape(self.node)[1], np.shape(self.node)[1]))
+
+    src = self.conn[1, self.conn[4, :] == 1].astype(int)
+    des = self.conn[2, self.conn[4, :] == 1].astype(int)
+
+    dict = self.node[0, :].astype(int)
+    for i in range(len(dict)):
+      src[np.where(src == dict[i])] = i
+      des[np.where(des == dict[i])] = i
+
+    adjMat[src, des] = 1
+    adjMat = adjMat.flatten()
+
+    ent = 0.
+    if (np.array(src).size>0 and np.array(des).size>0):
+      probs_pos = int(np.sum(adjMat==1)) / len(adjMat)
+      ent = -probs_pos * math.log2(probs_pos) - (1-probs_pos) * math.log2((1-probs_pos))
+    return ent
 
   def express(self):
     """Converts genes to weight matrix and activation vector

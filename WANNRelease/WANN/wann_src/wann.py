@@ -133,6 +133,7 @@ class Wann():
     nConns  = np.asarray([ind.nConn   for ind in self.pop])
     nConns[nConns==0] = 1 # No conns is always pareto optimal (but boring)
     nNode = np.asarray([len(ind.node[0, :])-ind.nInput-ind.nOutput for ind in self.pop]) ## internal node + bias node
+    ent = np.asarray([ind.entropy()   for ind in self.pop]) ## entropy
     objVals = np.c_[meanFit,maxFit,1/nConns] # Maximize
 
     # Alternate second objective
