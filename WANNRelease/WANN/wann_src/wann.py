@@ -156,7 +156,7 @@ def loadHyp(pFileName, printHyp=False):
   """
 
   # Load Parameters from disk
-  with open(pFileName) as data_file:    
+  with open('../'+pFileName) as data_file:    
     hyp = json.load(data_file)
 
   # Task hyper parameters

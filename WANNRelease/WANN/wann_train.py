@@ -54,7 +54,7 @@ def gatherData(data,wann,gen,hyp,savePop=False):
     data - (DataGatherer) - updated run data
   """
   data.gatherData(wann.pop, wann.species)
-  if (gen%hyp['save_mod']) is 0:
+  if (gen%hyp['save_mod']) == 0:
     #data = checkBest(data, bestReps=16)
     data = checkBest(data)
     data.save(gen)
