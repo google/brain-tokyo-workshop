@@ -133,4 +133,36 @@ biped = Game(env_name='BipedalWalker-v2',
 )
 games['biped'] = biped
 
+# -- Humanoid Standup ---------------------------------------------------- -- #
+
+standup = Game(env_name='HumanoidStandup-v2',
+  actionSelect='all', # all, soft, hard
+  input_size=376,
+  output_size=17,
+  time_factor=0,
+  layers=[10, 10], # Might be changed
+  i_act=np.full(376,1),
+  h_act=[1,2,3,4,5,6,7,8,9,10],
+  o_act=np.full(24,1),
+  weightCap = 2.0,
+  noise_bias=0.0,
+  output_noise=[False, False, False],
+  max_episode_length = 1600,
+  in_out_labels = [
+  'root_z_pos','root_w','root_x','root_y','root_z',
+  'abdomen_z','abdomen_y','abdomen_x','right_hip_x','right_hip_z','right_hip_y',
+  'right_knee','left_hip_x','left_hip_z','left_hip_y','left_knee',
+  'right_shoulder_1','right_shoulder_2','right_elbow',
+  'left_shoulder_1','left_shoulder_2','left_elbow']
+  + ['qvel_'+str(x) for x in range(0,23)]
+  + ['cinert_'+str(x) for x in range(0,140)]
+  + ['cvel_'+str(x) for x in range(0,84)]
+  + ['qfrac_actuator_'+str(x) for x in range(0,23)]
+  + ['cfrac_ext_'+str(x) for x in range(0,84)]
+  + ['abdomen_y','abdomen_z','abdomen_x','right_hip_x','right_hip_z','right_hip_y',
+  'right_knee','left_hip_x','left_hip_z','left_hip_y','left_knee',
+  'right_shoulder_1','right_shoulder_2','right_elbow',
+  'left_shoulder_1','left_shoulder_2','left_elbow']
+)
+games['standup'] = standup
 

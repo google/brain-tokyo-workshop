@@ -49,6 +49,10 @@ def make_env(env_name, seed=-1, render_mode=False):
     from domain.cartpole_swingup import CartPoleSwingUpEnv
     env = CartPoleSwingUpEnv()
 
+  # -- Humanoid Standup ---------------------------------------------- -- #
+  elif (env_name.startswith("HumanoidStandup")):
+    from domain.standup import HumanoidStandupEnv
+    env = HumanoidStandupEnv()
 
   # -- Other  -------------------------------------------------------- -- #
   else:

@@ -3,3 +3,4 @@ __init__.pyc
 __pycache__
 *.py~
 *.pyc
+*.json~
