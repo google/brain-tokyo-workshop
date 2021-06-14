@@ -1,0 +1,437 @@
+	*** Running with hyperparameters:  p/standup.json 	***
+	*** Running with hyperparameters:  p/standup.json 	***
+	*** Running with hyperparameters:  p/standup.json 	***
+	*** Running with hyperparameters:  p/standup.json 	***
+	*** Running with hyperparameters:  p/standup.json 	***
+	*** Running with hyperparameters:  p/standup.json 	***
+	*** Running with hyperparameters:  p/standup.json 	***
+	*** Running with hyperparameters:  p/standup.json 	***
+	*** Running with hyperparameters:  p/standup.json 	***
+	*** Running with hyperparameters:  p/standup.json 	***
+	*** Running with hyperparameters:  p/standup.json 	***
+	*** Running with hyperparameters:  p/standup.json 	***
+	*** Running with hyperparameters:  p/standup.json 	***
+	*** Running with hyperparameters:  p/standup.json 	***
+	*** Running with hyperparameters:  p/standup.json 	***
+	*** Running with hyperparameters:  p/standup.json 	***
+	*** Running with hyperparameters:  p/standup.json 	***
+Traceback (most recent call last):
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 12, in <module>
+Traceback (most recent call last):
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 12, in <module>
+Traceback (most recent call last):
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 12, in <module>
+Traceback (most recent call last):
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 12, in <module>
+Traceback (most recent call last):
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 12, in <module>
+Traceback (most recent call last):
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 12, in <module>
+Traceback (most recent call last):
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 12, in <module>
+Traceback (most recent call last):
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 12, in <module>
+Traceback (most recent call last):
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 12, in <module>
+Traceback (most recent call last):
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 12, in <module>
+Traceback (most recent call last):
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 12, in <module>
+Traceback (most recent call last):
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 12, in <module>
+Traceback (most recent call last):
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 12, in <module>
+Traceback (most recent call last):
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 12, in <module>
+Traceback (most recent call last):
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 12, in <module>
+Traceback (most recent call last):
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 12, in <module>
+    import mujoco_py
+ModuleNotFoundError: No module named 'mujoco_py'    import mujoco_py
+ModuleNotFoundError: No module named 'mujoco_py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "wann_train.py", line 285, in <module>
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "wann_train.py", line 285, in <module>
+    import mujoco_py
+ModuleNotFoundError: No module named 'mujoco_py'
+    import mujoco_py
+ModuleNotFoundError: No module named 'mujoco_py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "wann_train.py", line 285, in <module>
+    import mujoco_py
+ModuleNotFoundError    import mujoco_py
+ModuleNotFoundError: No module named 'mujoco_py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "wann_train.py", line 285, in <module>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "wann_train.py", line 285, in <module>
+    import mujoco_py
+ModuleNotFoundError: No module named 'mujoco_py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "wann_train.py", line 285, in <module>
+: No module named 'mujoco_py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "wann_train.py", line 285, in <module>
+    import mujoco_py
+    import mujoco_py
+ModuleNotFoundError: No module named 'mujoco_py'
+
+During handling of the above exception, another exception occurred:
+
+    import mujoco_py
+ModuleNotFoundError: No module named 'mujoco_py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "wann_train.py", line 285, in <module>
+    import mujoco_py
+ModuleNotFoundError: No module named 'mujoco_py'
+    import mujoco_py
+ModuleNotFoundError: No module named 'mujoco_py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "wann_train.py", line 285, in <module>
+    import mujoco_py
+ModuleNotFoundError: No module named 'mujoco_py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "wann_train.py", line 285, in <module>
+    import mujoco_py
+ModuleNotFoundError: No module named 'mujoco_py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "wann_train.py", line 285, in <module>
+ModuleNotFoundError: No module named 'mujoco_py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "wann_train.py", line 285, in <module>
+Traceback (most recent call last):
+  File "wann_train.py", line 285, in <module>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "wann_train.py", line 285, in <module>
+    import mujoco_py
+ModuleNotFoundError: No module named 'mujoco_py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "wann_train.py", line 285, in <module>
+    import mujoco_py
+ModuleNotFoundError: No module named 'mujoco_py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "wann_train.py", line 285, in <module>
+    main(args)                              
+    main(args)                              
+  File "wann_train.py", line 261, in main
+    main(args)                              
+  File "wann_train.py", line 261, in main
+    main(args)                              
+  File "wann_train.py", line 261, in main
+  File "wann_train.py", line 261, in main
+    main(args)                              
+  File "wann_train.py", line 261, in main
+    main(args)                              
+  File "wann_train.py", line 261, in main
+    main(args)                              
+  File "wann_train.py", line 261, in main
+    main(args)                              
+  File "wann_train.py", line 261, in main
+    main(args)                              
+  File "wann_train.py", line 261, in main
+    main(args)                              
+  File "wann_train.py", line 261, in main
+    main(args)                              
+  File "wann_train.py", line 261, in main
+    main(args)                              
+  File "wann_train.py", line 261, in main
+    slave()
+  File "wann_train.py", line 186, in slave
+    slave()
+  File "wann_train.py", line 186, in slave
+    slave()
+  File "wann_train.py", line 186, in slave
+    slave()
+  File "wann_train.py", line 186, in slave
+    main(args)                              
+  File "wann_train.py", line 261, in main
+    main(args)                              
+    slave()
+  File "wann_train.py", line 186, in slave
+  File "wann_train.py", line 261, in main
+    slave()
+  File "wann_train.py", line 186, in slave
+    slave()
+  File "wann_train.py", line 186, in slave
+    main(args)                              
+  File "wann_train.py", line 261, in main
+    main(args)                              
+  File "wann_train.py", line 261, in main
+    slave()
+  File "wann_train.py", line 186, in slave
+    slave()
+  File "wann_train.py", line 186, in slave
+    slave()
+  File "wann_train.py", line 186, in slave
+    slave()
+  File "wann_train.py", line 186, in slave
+    task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/wann_src/task.py", line 36, in __init__
+    slave()
+  File "wann_train.py", line 186, in slave
+    task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/wann_src/task.py", line 36, in __init__
+    slave()
+  File "wann_train.py", line 186, in slave
+    task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/wann_src/task.py", line 36, in __init__
+    task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/wann_src/task.py", line 36, in __init__
+    task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/wann_src/task.py", line 36, in __init__
+    task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/wann_src/task.py", line 36, in __init__
+    task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/wann_src/task.py", line 36, in __init__
+    task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/wann_src/task.py", line 36, in __init__
+    slave()
+  File "wann_train.py", line 186, in slave
+    task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/wann_src/task.py", line 36, in __init__
+    task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/wann_src/task.py", line 36, in __init__
+    slave()
+  File "wann_train.py", line 186, in slave
+    task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/wann_src/task.py", line 36, in __init__
+    task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/wann_src/task.py", line 36, in __init__
+    slave()
+  File "wann_train.py", line 186, in slave
+    task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
+    self.env = make_env(game.env_name)
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/make_env.py", line 54, in make_env
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/wann_src/task.py", line 36, in __init__
+    task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/wann_src/task.py", line 36, in __init__
+    self.env = make_env(game.env_name)
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/make_env.py", line 54, in make_env
+    self.env = make_env(game.env_name)
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/make_env.py", line 54, in make_env
+    self.env = make_env(game.env_name)
+    self.env = make_env(game.env_name)
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/make_env.py", line 54, in make_env
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/make_env.py", line 54, in make_env
+    self.env = make_env(game.env_name)
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/make_env.py", line 54, in make_env
+    self.env = make_env(game.env_name)
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/make_env.py", line 54, in make_env
+    self.env = make_env(game.env_name)
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/make_env.py", line 54, in make_env
+    self.env = make_env(game.env_name)
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/make_env.py", line 54, in make_env
+    self.env = make_env(game.env_name)
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/make_env.py", line 54, in make_env
+    self.env = make_env(game.env_name)
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/make_env.py", line 54, in make_env
+    self.env = make_env(game.env_name)
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/make_env.py", line 54, in make_env
+    self.env = make_env(game.env_name)
+    task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/wann_src/task.py", line 36, in __init__
+    self.env = make_env(game.env_name)
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/make_env.py", line 54, in make_env
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/make_env.py", line 54, in make_env
+    task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/wann_src/task.py", line 36, in __init__
+    from domain.humanoidstandup import HumanoidStandupEnv
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/humanoidstandup.py", line 1, in <module>
+    from domain.humanoidstandup import HumanoidStandupEnv
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/humanoidstandup.py", line 1, in <module>
+    from domain.humanoidstandup import HumanoidStandupEnv
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/humanoidstandup.py", line 1, in <module>
+    from domain.humanoidstandup import HumanoidStandupEnv
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/humanoidstandup.py", line 1, in <module>
+    from domain.humanoidstandup import HumanoidStandupEnv
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/humanoidstandup.py", line 1, in <module>
+    from domain.humanoidstandup import HumanoidStandupEnv
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/humanoidstandup.py", line 1, in <module>
+    from domain.humanoidstandup import HumanoidStandupEnv
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/humanoidstandup.py", line 1, in <module>
+    from domain.humanoidstandup import HumanoidStandupEnv
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/humanoidstandup.py", line 1, in <module>
+    from domain.humanoidstandup import HumanoidStandupEnv
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/humanoidstandup.py", line 1, in <module>
+    from domain.humanoidstandup import HumanoidStandupEnv
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/humanoidstandup.py", line 1, in <module>
+    from domain.humanoidstandup import HumanoidStandupEnv
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/humanoidstandup.py", line 1, in <module>
+    from domain.humanoidstandup import HumanoidStandupEnv
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/humanoidstandup.py", line 1, in <module>
+    from domain.humanoidstandup import HumanoidStandupEnv
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/humanoidstandup.py", line 1, in <module>
+    self.env = make_env(game.env_name)
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/make_env.py", line 54, in make_env
+    from gym.envs.mujoco import mujoco_env
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/__init__.py", line 1, in <module>
+    from domain.humanoidstandup import HumanoidStandupEnv
+    from gym.envs.mujoco import mujoco_env
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/__init__.py", line 1, in <module>
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/humanoidstandup.py", line 1, in <module>
+    from gym.envs.mujoco import mujoco_env
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/__init__.py", line 1, in <module>
+    from gym.envs.mujoco import mujoco_env
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/__init__.py", line 1, in <module>
+    self.env = make_env(game.env_name)
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/make_env.py", line 54, in make_env
+    from gym.envs.mujoco import mujoco_env
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/__init__.py", line 1, in <module>
+    from gym.envs.mujoco import mujoco_env
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/__init__.py", line 1, in <module>
+    from gym.envs.mujoco import mujoco_env
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/__init__.py", line 1, in <module>
+    from gym.envs.mujoco import mujoco_env
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/__init__.py", line 1, in <module>
+    from gym.envs.mujoco import mujoco_env
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/__init__.py", line 1, in <module>
+    from gym.envs.mujoco import mujoco_env
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/__init__.py", line 1, in <module>
+    from gym.envs.mujoco import mujoco_env
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/__init__.py", line 1, in <module>
+    from gym.envs.mujoco import mujoco_env
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/__init__.py", line 1, in <module>
+    from gym.envs.mujoco import mujoco_env
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/__init__.py", line 1, in <module>
+    from domain.humanoidstandup import HumanoidStandupEnv
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/humanoidstandup.py", line 1, in <module>
+    from gym.envs.mujoco import mujoco_env
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/__init__.py", line 1, in <module>
+    from domain.humanoidstandup import HumanoidStandupEnv
+  File "/Storage/iwai/brain-tokyo-workshop/WANNRelease/WANN/domain/humanoidstandup.py", line 1, in <module>
+    from gym.envs.mujoco import mujoco_env
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/__init__.py", line 1, in <module>
+    from gym.envs.mujoco import mujoco_env
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/__init__.py", line 1, in <module>
+    from gym.envs.mujoco.mujoco_env import MujocoEnv
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 14, in <module>
+    from gym.envs.mujoco.mujoco_env import MujocoEnv
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 14, in <module>
+    from gym.envs.mujoco.mujoco_env import MujocoEnv
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 14, in <module>
+    from gym.envs.mujoco.mujoco_env import MujocoEnv
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 14, in <module>
+    from gym.envs.mujoco.mujoco_env import MujocoEnv
+    from gym.envs.mujoco.mujoco_env import MujocoEnv
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 14, in <module>
+    from gym.envs.mujoco.mujoco_env import MujocoEnv
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 14, in <module>
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 14, in <module>
+    from gym.envs.mujoco.mujoco_env import MujocoEnv
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 14, in <module>
+    from gym.envs.mujoco.mujoco_env import MujocoEnv
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 14, in <module>
+    from gym.envs.mujoco.mujoco_env import MujocoEnv
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 14, in <module>
+    from gym.envs.mujoco.mujoco_env import MujocoEnv
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 14, in <module>
+    from gym.envs.mujoco.mujoco_env import MujocoEnv
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 14, in <module>
+    from gym.envs.mujoco.mujoco_env import MujocoEnv
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 14, in <module>
+    from gym.envs.mujoco.mujoco_env import MujocoEnv
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 14, in <module>
+    from gym.envs.mujoco.mujoco_env import MujocoEnv
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 14, in <module>
+    from gym.envs.mujoco.mujoco_env import MujocoEnv
+  File "/Storage/iwai/anaconda3/lib/python3.8/site-packages/gym/envs/mujoco/mujoco_env.py", line 14, in <module>
+    raise error.DependencyNotInstalled("{}. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)".format(e))
+gym.error.    raise error.DependencyNotInstalled("{}. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)".format(e))DependencyNotInstalled: No module named 'mujoco_py'. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)
+    raise error.DependencyNotInstalled("{}. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)".format(e))
+gym.error.DependencyNotInstalled: No module named 'mujoco_py'. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)
+
+gym.error.DependencyNotInstalled: No module named 'mujoco_py'. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)
+    raise error.DependencyNotInstalled("{}. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)".format(e))
+gym.error.DependencyNotInstalled    raise error.DependencyNotInstalled("{}. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)".format(e))
+: No module named 'mujoco_py'. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)
+    raise error.DependencyNotInstalled("{}. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)".format(e))
+gym.error.DependencyNotInstalled: No module named 'mujoco_py'. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)
+gym.error.DependencyNotInstalled: No module named 'mujoco_py'. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)
+    raise error.DependencyNotInstalled("{}. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)".format(e))
+gym.error.DependencyNotInstalled: No module named 'mujoco_py'. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)
+    raise error.DependencyNotInstalled("{}. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)".format(e))
+gym.error.DependencyNotInstalled    raise error.DependencyNotInstalled("{}. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)".format(e))
+: No module named 'mujoco_py'. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)
+gym.error.DependencyNotInstalled: No module named 'mujoco_py'. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)
+    raise error.DependencyNotInstalled("{}. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)".format(e))
+gym.error.DependencyNotInstalled: No module named 'mujoco_py'. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)
+    raise error.DependencyNotInstalled("{}. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)".format(e))
+gym.error.DependencyNotInstalled: No module named 'mujoco_py'. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)
+    raise error.DependencyNotInstalled("{}. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)".format(e))
+gym.error.DependencyNotInstalled: No module named 'mujoco_py'. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)
+    raise error.DependencyNotInstalled("{}. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)".format(e))
+gym.error.    raise error.DependencyNotInstalled("{}. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)".format(e))
+gym.error.DependencyNotInstalled: No module named 'mujoco_py'. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)
+DependencyNotInstalled: No module named 'mujoco_py'. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)
+    raise error.DependencyNotInstalled("{}. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)".format(e))
+gym.error.DependencyNotInstalled: No module named 'mujoco_py'. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)
+    raise error.DependencyNotInstalled("{}. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)".format(e))
+gym.error.DependencyNotInstalled: No module named 'mujoco_py'. (HINT: you need to install mujoco_py, and also perform the setup instructions here: https://github.com/openai/mujoco-py/.)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 31999 RUNNING AT euler
+=   EXIT CODE: 9
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+YOUR APPLICATION TERMINATED WITH THE EXIT STRING: Killed (signal 9)
+This typically refers to a problem with your application.
+Please see the FAQ page for debugging suggestions
+['mpirun', '-np', '17', '/Storage/iwai/anaconda3/bin/python', 'wann_train.py', '-p', 'p/standup.json', '-n', '16']
+Traceback (most recent call last):
+  File "wann_train.py", line 283, in <module>
+    if "parent" == mpi_fork(args.num_worker+1): os._exit(0)
+  File "wann_train.py", line 233, in mpi_fork
+    subprocess.check_call(["mpirun", "-np", str(n), sys.executable] +['-u']+ sys.argv, env=env)
+  File "/Storage/iwai/anaconda3/lib/python3.8/subprocess.py", line 364, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['mpirun', '-np', '17', '/Storage/iwai/anaconda3/bin/python', '-u', 'wann_train.py', '-p', 'p/standup.json', '-n', '16']' returned non-zero exit status 9.

@@ -1,7 +1,7 @@
 {
     "task":"standup",
     "alg_nReps": 4,
-    "maxGen": 2048,
+    "maxGen": 1024,
     "popSize": 480,
     "prob_initEnable": 0.25,
     "select_tournSize": 16

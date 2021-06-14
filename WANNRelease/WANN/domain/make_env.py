@@ -51,7 +51,7 @@ def make_env(env_name, seed=-1, render_mode=False):
 
   # -- Humanoid Standup ---------------------------------------------- -- #
   elif (env_name.startswith("HumanoidStandup")):
-    from domain.standup import HumanoidStandupEnv
+    from domain.humanoidstandup import HumanoidStandupEnv
     env = HumanoidStandupEnv()
 
   # -- Other  -------------------------------------------------------- -- #
