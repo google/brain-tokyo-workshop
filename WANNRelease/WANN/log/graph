@@ -1,0 +1,84 @@
+digraph {
+	node [shape=circle]
+	0 [label=x color=grey fillcolor=grey style=filled]
+	1 [label=x_dot color=grey fillcolor=grey style=filled]
+	2 [label="cos(theta)" color=grey fillcolor=grey style=filled]
+	3 [label="sin(theta)" color=grey fillcolor=grey style=filled]
+	4 [label=theta_dot color=grey fillcolor=grey style=filled]
+	5 [label=bias color=grey fillcolor=grey style=filled]
+	6 [label=Inverse color=black]
+	7 [label=Inverse color=black]
+	8 [label=tanh color=navy]
+	9 [label=Linear color=grey]
+	10 [label=tanh color=navy]
+	11 [label=tanh color=navy]
+	12 [label=Gausian color=orange]
+	13 [label=Linear color=grey]
+	14 [label=Inverse color=black]
+	15 [label=Sin color=yellow]
+	16 [label=Relu color=skyblue]
+	17 [label=Linear color=grey]
+	18 [label=Sin color=yellow]
+	19 [label=Inverse color=black]
+	20 [label=Relu color=skyblue]
+	21 [label=tanh color=navy]
+	22 [label=Gausian color=orange]
+	23 [label=Sin color=yellow]
+	24 [label=Relu color=skyblue]
+	25 [label=Inverse color=black]
+	26 [label=Linear color=grey]
+	27 [label=Inverse color=black]
+	28 [label=force color=grey fillcolor=grey style=filled]
+	0 -> 10
+	1 -> 6
+	1 -> 7
+	1 -> 12
+	2 -> 6
+	2 -> 11
+	3 -> 8
+	3 -> 10
+	3 -> 21
+	4 -> 9
+	4 -> 12
+	4 -> 26
+	5 -> 12
+	6 -> 28
+	7 -> 28
+	8 -> 25
+	9 -> 28
+	10 -> 12
+	11 -> 12
+	12 -> 13
+	12 -> 14
+	12 -> 15
+	12 -> 16
+	12 -> 19
+	12 -> 20
+	12 -> 25
+	12 -> 26
+	12 -> 28
+	13 -> 17
+	13 -> 18
+	13 -> 21
+	13 -> 24
+	13 -> 26
+	14 -> 19
+	15 -> 26
+	16 -> 20
+	17 -> 24
+	18 -> 21
+	19 -> 23
+	19 -> 25
+	20 -> 22
+	20 -> 23
+	20 -> 24
+	20 -> 26
+	21 -> 24
+	22 -> 24
+	23 -> 25
+	24 -> 26
+	24 -> 27
+	25 -> 28
+	26 -> 28
+	27 -> 28
+}
