@@ -16,8 +16,8 @@ from gym.wrappers import Monitor
 np.set_printoptions(precision=2) 
 np.set_printoptions(linewidth=160)
 
-final_mode = True
-render_mode = False
+final_mode = False
+render_mode = True
 
 #final_mode = False; render_mode = True # VIEW: toggle with comment to view trials
 
