@@ -1,0 +1,356 @@
+digraph {
+	ranksep=1.5
+	graph [rankdir=LR]
+	node [shape=oval]
+	0 [label=latent01 color=lightslategrey]
+	1 [label=latent02 color=lightslategrey]
+	2 [label=latent03 color=lightslategrey]
+	3 [label=latent04 color=lightslategrey]
+	4 [label=latent05 color=lightslategrey]
+	5 [label=latent06 color=lightslategrey]
+	6 [label=latent07 color=lightslategrey]
+	7 [label=latent08 color=lightslategrey]
+	8 [label=latent09 color=lightslategrey]
+	9 [label=latent10 color=lightslategrey]
+	10 [label=latent11 color=lightslategrey]
+	11 [label=latent12 color=lightslategrey]
+	12 [label=latent13 color=lightslategrey]
+	13 [label=latent14 color=lightslategrey]
+	14 [label=latent15 color=lightslategrey]
+	15 [label=latent16 color=lightslategrey]
+	16 [label=bias color=lightslategrey]
+	17 [label=Linear color=lightslategrey fillcolor=lightslategrey style=filled]
+	18 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
+	19 [label="Absolute Value" color=skyblue fillcolor=skyblue style=filled]
+	20 [label=Linear color=lightslategrey fillcolor=lightslategrey style=filled]
+	21 [label=Linear color=lightslategrey fillcolor=lightslategrey style=filled]
+	22 [label=tanh color=greenyellow fillcolor=greenyellow style=filled]
+	23 [label=Sin color=orange fillcolor=orange style=filled]
+	24 [label=Sin color=orange fillcolor=orange style=filled]
+	25 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
+	26 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
+	27 [label="Absolute Value" color=skyblue fillcolor=skyblue style=filled]
+	28 [label=tanh color=greenyellow fillcolor=greenyellow style=filled]
+	29 [label=Relu color=dodgerblue fillcolor=dodgerblue style=filled]
+	30 [label=tanh color=greenyellow fillcolor=greenyellow style=filled]
+	31 [label=tanh color=greenyellow fillcolor=greenyellow style=filled]
+	32 [label=Sin color=orange fillcolor=orange style=filled]
+	33 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
+	34 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
+	35 [label=Sin color=orange fillcolor=orange style=filled]
+	36 [label=Linear color=lightslategrey fillcolor=lightslategrey style=filled]
+	37 [label=Relu color=dodgerblue fillcolor=dodgerblue style=filled]
+	38 [label="Sigmoid unsigned" color=yellowgreen fillcolor=yellowgreen style=filled]
+	39 [label=Relu color=dodgerblue fillcolor=dodgerblue style=filled]
+	40 [label="Unsigned Step Function" color=tomato fillcolor=tomato style=filled]
+	41 [label=Relu color=dodgerblue fillcolor=dodgerblue style=filled]
+	42 [label=Gausian color=gold fillcolor=gold style=filled]
+	43 [label="Sigmoid unsigned" color=yellowgreen fillcolor=yellowgreen style=filled]
+	44 [label=tanh color=greenyellow fillcolor=greenyellow style=filled]
+	45 [label=Relu color=dodgerblue fillcolor=dodgerblue style=filled]
+	46 [label=Sin color=orange fillcolor=orange style=filled]
+	47 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
+	48 [label=tanh color=greenyellow fillcolor=greenyellow style=filled]
+	49 [label="Absolute Value" color=skyblue fillcolor=skyblue style=filled]
+	50 [label="Sigmoid unsigned" color=yellowgreen fillcolor=yellowgreen style=filled]
+	51 [label=Gausian color=gold fillcolor=gold style=filled]
+	52 [label="Sigmoid unsigned" color=yellowgreen fillcolor=yellowgreen style=filled]
+	53 [label=Sin color=orange fillcolor=orange style=filled]
+	54 [label=tanh color=greenyellow fillcolor=greenyellow style=filled]
+	55 [label=Gausian color=gold fillcolor=gold style=filled]
+	56 [label=tanh color=greenyellow fillcolor=greenyellow style=filled]
+	57 [label=Linear color=lightslategrey fillcolor=lightslategrey style=filled]
+	58 [label=Gausian color=gold fillcolor=gold style=filled]
+	59 [label=Relu color=dodgerblue fillcolor=dodgerblue style=filled]
+	60 [label=tanh color=greenyellow fillcolor=greenyellow style=filled]
+	61 [label=Relu color=dodgerblue fillcolor=dodgerblue style=filled]
+	62 [label=Sin color=orange fillcolor=orange style=filled]
+	63 [label=Linear color=lightslategrey fillcolor=lightslategrey style=filled]
+	64 [label="Unsigned Step Function" color=tomato fillcolor=tomato style=filled]
+	65 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
+	66 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
+	67 [label=Relu color=dodgerblue fillcolor=dodgerblue style=filled]
+	68 [label=Sin color=orange fillcolor=orange style=filled]
+	69 [label=tanh color=greenyellow fillcolor=greenyellow style=filled]
+	70 [label="Sigmoid unsigned" color=yellowgreen fillcolor=yellowgreen style=filled]
+	71 [label="Unsigned Step Function" color=tomato fillcolor=tomato style=filled]
+	72 [label=Relu color=dodgerblue fillcolor=dodgerblue style=filled]
+	73 [label="Unsigned Step Function" color=tomato fillcolor=tomato style=filled]
+	74 [label=tanh color=greenyellow fillcolor=greenyellow style=filled]
+	75 [label=Gausian color=gold fillcolor=gold style=filled]
+	76 [label=Relu color=dodgerblue fillcolor=dodgerblue style=filled]
+	77 [label="Unsigned Step Function" color=tomato fillcolor=tomato style=filled]
+	78 [label=Linear color=lightslategrey fillcolor=lightslategrey style=filled]
+	79 [label="Sigmoid unsigned" color=yellowgreen fillcolor=yellowgreen style=filled]
+	80 [label="Sigmoid unsigned" color=yellowgreen fillcolor=yellowgreen style=filled]
+	81 [label="Sigmoid unsigned" color=yellowgreen fillcolor=yellowgreen style=filled]
+	82 [label=Sin color=orange fillcolor=orange style=filled]
+	83 [label=Linear color=lightslategrey fillcolor=lightslategrey style=filled]
+	84 [label="Absolute Value" color=skyblue fillcolor=skyblue style=filled]
+	85 [label="Unsigned Step Function" color=tomato fillcolor=tomato style=filled]
+	86 [label=tanh color=greenyellow fillcolor=greenyellow style=filled]
+	87 [label=Relu color=dodgerblue fillcolor=dodgerblue style=filled]
+	88 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
+	89 [label="Unsigned Step Function" color=tomato fillcolor=tomato style=filled]
+	90 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
+	91 [label="Unsigned Step Function" color=tomato fillcolor=tomato style=filled]
+	92 [label="Absolute Value" color=skyblue fillcolor=skyblue style=filled]
+	93 [label="Unsigned Step Function" color=tomato fillcolor=tomato style=filled]
+	94 [label=Gausian color=gold fillcolor=gold style=filled]
+	95 [label="Absolute Value" color=skyblue fillcolor=skyblue style=filled]
+	96 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
+	97 [label=Relu color=dodgerblue fillcolor=dodgerblue style=filled]
+	98 [label=tanh color=greenyellow fillcolor=greenyellow style=filled]
+	99 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
+	100 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
+	101 [label=Sin color=orange fillcolor=orange style=filled]
+	102 [label=tanh color=greenyellow fillcolor=greenyellow style=filled]
+	103 [label=steer color=black]
+	104 [label=gas color=black]
+	105 [label=brakes color=black]
+	0 -> 30
+	0 -> 35
+	0 -> 40
+	0 -> 104
+	1 -> 17
+	1 -> 20
+	1 -> 38
+	1 -> 42
+	1 -> 83
+	2 -> 97
+	2 -> 104
+	3 -> 104
+	4 -> 60
+	4 -> 83
+	4 -> 103
+	4 -> 105
+	5 -> 24
+	5 -> 32
+	5 -> 48
+	5 -> 67
+	5 -> 71
+	5 -> 80
+	5 -> 104
+	6 -> 21
+	6 -> 28
+	6 -> 50
+	6 -> 84
+	6 -> 85
+	6 -> 98
+	6 -> 104
+	7 -> 22
+	7 -> 24
+	7 -> 27
+	7 -> 33
+	7 -> 34
+	7 -> 36
+	7 -> 47
+	7 -> 80
+	7 -> 98
+	8 -> 23
+	8 -> 83
+	8 -> 94
+	8 -> 98
+	9 -> 18
+	9 -> 26
+	9 -> 63
+	9 -> 66
+	9 -> 91
+	10 -> 31
+	10 -> 37
+	10 -> 104
+	11 -> 18
+	11 -> 31
+	11 -> 40
+	11 -> 50
+	11 -> 83
+	11 -> 104
+	11 -> 105
+	12 -> 27
+	12 -> 56
+	13 -> 19
+	13 -> 29
+	13 -> 42
+	13 -> 70
+	13 -> 83
+	13 -> 98
+	13 -> 101
+	13 -> 105
+	14 -> 25
+	14 -> 104
+	14 -> 105
+	15 -> 65
+	15 -> 75
+	15 -> 103
+	15 -> 104
+	15 -> 105
+	16 -> 39
+	16 -> 66
+	16 -> 71
+	17 -> 41
+	17 -> 98
+	17 -> 103
+	17 -> 104
+	17 -> 105
+	18 -> 95
+	18 -> 103
+	19 -> 42
+	19 -> 43
+	19 -> 44
+	19 -> 59
+	19 -> 96
+	20 -> 45
+	20 -> 60
+	21 -> 46
+	21 -> 102
+	21 -> 104
+	22 -> 47
+	22 -> 104
+	23 -> 48
+	23 -> 89
+	24 -> 49
+	24 -> 69
+	25 -> 103
+	26 -> 103
+	27 -> 73
+	28 -> 50
+	29 -> 51
+	29 -> 52
+	29 -> 94
+	30 -> 55
+	31 -> 91
+	32 -> 98
+	33 -> 53
+	33 -> 64
+	34 -> 64
+	35 -> 54
+	36 -> 104
+	37 -> 55
+	38 -> 105
+	39 -> 56
+	40 -> 57
+	41 -> 80
+	41 -> 105
+	42 -> 58
+	42 -> 75
+	42 -> 100
+	42 -> 105
+	43 -> 59
+	44 -> 96
+	45 -> 60
+	46 -> 104
+	47 -> 98
+	48 -> 61
+	48 -> 73
+	48 -> 105
+	49 -> 63
+	49 -> 69
+	50 -> 62
+	50 -> 73
+	50 -> 98
+	51 -> 94
+	52 -> 63
+	52 -> 94
+	53 -> 64
+	54 -> 65
+	54 -> 90
+	55 -> 78
+	55 -> 87
+	55 -> 91
+	55 -> 105
+	56 -> 66
+	57 -> 67
+	58 -> 100
+	59 -> 68
+	59 -> 96
+	59 -> 98
+	60 -> 75
+	60 -> 103
+	61 -> 73
+	61 -> 99
+	62 -> 73
+	63 -> 69
+	63 -> 85
+	64 -> 72
+	64 -> 80
+	65 -> 70
+	66 -> 71
+	66 -> 74
+	67 -> 72
+	67 -> 79
+	67 -> 85
+	67 -> 91
+	68 -> 92
+	68 -> 98
+	69 -> 73
+	69 -> 74
+	69 -> 85
+	69 -> 105
+	70 -> 75
+	70 -> 76
+	70 -> 83
+	71 -> 77
+	71 -> 78
+	71 -> 84
+	71 -> 89
+	71 -> 96
+	72 -> 79
+	73 -> 80
+	73 -> 88
+	73 -> 90
+	74 -> 80
+	74 -> 85
+	74 -> 88
+	74 -> 102
+	75 -> 81
+	75 -> 82
+	75 -> 87
+	75 -> 88
+	75 -> 97
+	75 -> 100
+	75 -> 103
+	76 -> 83
+	77 -> 105
+	78 -> 84
+	78 -> 88
+	79 -> 85
+	79 -> 86
+	80 -> 98
+	80 -> 99
+	81 -> 87
+	82 -> 88
+	83 -> 95
+	83 -> 99
+	83 -> 103
+	84 -> 89
+	85 -> 90
+	85 -> 91
+	85 -> 92
+	85 -> 96
+	85 -> 100
+	85 -> 103
+	86 -> 103
+	87 -> 93
+	87 -> 97
+	87 -> 100
+	88 -> 102
+	89 -> 96
+	90 -> 94
+	90 -> 98
+	90 -> 103
+	91 -> 95
+	92 -> 96
+	93 -> 97
+	94 -> 98
+	95 -> 99
+	96 -> 105
+	97 -> 100
+	98 -> 100
+	98 -> 101
+	98 -> 102
+	99 -> 105
+	100 -> 102
+	100 -> 105
+	101 -> 105
+	102 -> 103
+}
