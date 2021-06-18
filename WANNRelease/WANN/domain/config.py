@@ -137,13 +137,13 @@ games['biped'] = biped
 
 flagrun = Game(env_name='HumanoidFlagrunBulletEnv-v0',
   actionSelect='all', # all, soft, hard
-  input_size=376,
+  input_size=44,
   output_size=17,
   time_factor=0,
   layers=[10, 10], # Might be changed
-  i_act=np.full(376,1),
+  i_act=np.full(44,1),
   h_act=[1,2,3,4,5,6,7,8,9,10],
-  o_act=np.full(24,1),
+  o_act=np.full(17,1),
   weightCap = 2.0,
   noise_bias=0.0,
   output_noise=[False, False, False],
