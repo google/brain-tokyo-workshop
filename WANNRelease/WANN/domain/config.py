@@ -135,7 +135,7 @@ games['biped'] = biped
 
 # -- Humanoid Flagrun ---------------------------------------------------- -- #
 
-flagrun = Game(env_name='HumanoidFlagrunBulletEnv-v0',
+bullet_flagrun = Game(env_name='HumanoidFlagrunBulletEnv-v0',
   actionSelect='all', # all, soft, hard
   input_size=44,
   output_size=17,
@@ -150,5 +150,5 @@ flagrun = Game(env_name='HumanoidFlagrunBulletEnv-v0',
   max_episode_length = 1600,
   in_out_labels = ['in_label_'+str(x) for x in range(44)] + ['out_label_'+str(x) for x in range(17)]
 )
-games['flagrun'] = flagrun
+games['bullet_flagrun'] = bullet_flagrun
 
