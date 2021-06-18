@@ -63,8 +63,8 @@ classify = Game(env_name='Classify_digits',
   max_episode_length = 0,
   in_out_labels = []
 )
-L = [list(range(1, classify.input_size)),\
-     list(range(0, classify.output_size))]
+L = [list(range(1, classify.input_size+1)),\
+     list(range(0, classify.output_size+1))]
 label = [item for sublist in L for item in sublist]
 classify = classify._replace(in_out_labels=label)
 games['digits'] = classify
@@ -73,8 +73,8 @@ games['digits'] = classify
 # > MNIST [16x16] data set
 mnist256 = classify._replace(\
   env_name='Classify_mnist256', input_size=256, i_act=np.full(256,1))
-L = [list(range(1, mnist256.input_size)),\
-     list(range(0, mnist256.output_size))]
+L = [list(range(1, mnist256.input_size+1)),\
+     list(range(0, mnist256.output_size+1))]
 label = [item for sublist in L for item in sublist]
 mnist256 = mnist256._replace(in_out_labels=label)
 games['mnist256'] = mnist256
