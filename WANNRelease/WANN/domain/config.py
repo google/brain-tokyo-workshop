@@ -148,21 +148,7 @@ flagrun = Game(env_name='HumanoidFlagrunBulletEnv-v0',
   noise_bias=0.0,
   output_noise=[False, False, False],
   max_episode_length = 1600,
-  in_out_labels = [
-  'root_z_pos','root_w','root_x','root_y','root_z',
-  'abdomen_z','abdomen_y','abdomen_x','right_hip_x','right_hip_z','right_hip_y',
-  'right_knee','left_hip_x','left_hip_z','left_hip_y','left_knee',
-  'right_shoulder_1','right_shoulder_2','right_elbow',
-  'left_shoulder_1','left_shoulder_2','left_elbow']
-  + ['qvel_'+str(x) for x in range(0,23)]
-  + ['cinert_'+str(x) for x in range(0,140)]
-  + ['cvel_'+str(x) for x in range(0,84)]
-  + ['qfrac_actuator_'+str(x) for x in range(0,23)]
-  + ['cfrac_ext_'+str(x) for x in range(0,84)]
-  + ['abdomen_y','abdomen_z','abdomen_x','right_hip_x','right_hip_z','right_hip_y',
-  'right_knee','left_hip_x','left_hip_z','left_hip_y','left_knee',
-  'right_shoulder_1','right_shoulder_2','right_elbow',
-  'left_shoulder_1','left_shoulder_2','left_elbow']
+  in_out_labels = ['label_'+str(x) for x in range(44)]
 )
 games['flagrun'] = flagrun
 
