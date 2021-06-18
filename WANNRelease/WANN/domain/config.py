@@ -133,9 +133,9 @@ biped = Game(env_name='BipedalWalker-v2',
 )
 games['biped'] = biped
 
-# -- Humanoid Standup ---------------------------------------------------- -- #
+# -- Humanoid Flagrun ---------------------------------------------------- -- #
 
-standup = Game(env_name='HumanoidStandup-v2',
+flagrun = Game(env_name='HumanoidFlagrunBulletEnv-v0',
   actionSelect='all', # all, soft, hard
   input_size=376,
   output_size=17,
@@ -164,5 +164,5 @@ standup = Game(env_name='HumanoidStandup-v2',
   'right_shoulder_1','right_shoulder_2','right_elbow',
   'left_shoulder_1','left_shoulder_2','left_elbow']
 )
-games['standup'] = standup
+games['flagrun'] = flagrun
 

@@ -1,7 +1,7 @@
 {
-    "task":"standup",
+    "task":"flagrun",
     "alg_nReps": 4,
-    "maxGen": 1024,
+    "maxGen": 5,
     "popSize": 480,
     "prob_initEnable": 0.25,
     "select_tournSize": 16
