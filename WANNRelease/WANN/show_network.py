@@ -53,19 +53,22 @@ def main(argv):
     graph.attr('graph', rankdir="LR")
     graph.attr("node", shape="oval")
 
-    
-    for i in range(dim):
+    with graph.subgraph() as sub:
+        sub.attr(rank='same')
+        for i in range(input_size+1):
+            sub.node(str(i), str(in_out_labels[i]), color='lightgrey')
+        
+    for i in range(input_size+1,dim-output_size):
         label, color = actNum2str(aVec[i])
-        if i <= input_size:
-            graph.node(str(i), str(in_out_labels[i]), color=color)
-            
-        elif dim - output_size <= i:
+        graph.node(str(i), label,color=color,\
+            style='filled', fillcolor=color)
+        
+    with graph.subgraph() as sub:
+        sub.attr(rank='same')
+        for i in range(dim-output_size,dim):
             j = i-dim+output_size
             graph.node(str(i), str(in_out_labels[j]), color='black')
-            
-        else:
-            graph.node(str(i), label,color=color,\
-            style='filled', fillcolor=color)
+        
             
     (farray, tarray) = np.where(wVec!=0)
     for i in range(len(farray)):

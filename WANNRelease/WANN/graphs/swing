@@ -2,12 +2,15 @@ digraph {
 	ranksep=1.5
 	graph [rankdir=LR]
 	node [shape=oval]
-	0 [label=x color=lightslategrey]
-	1 [label=x_dot color=lightslategrey]
-	2 [label="cos(theta)" color=lightslategrey]
-	3 [label="sin(theta)" color=lightslategrey]
-	4 [label=theta_dot color=lightslategrey]
-	5 [label=bias color=lightslategrey]
+	{
+		rank=same
+		0 [label=x color=lightgrey]
+		1 [label=x_dot color=lightgrey]
+		2 [label="cos(theta)" color=lightgrey]
+		3 [label="sin(theta)" color=lightgrey]
+		4 [label=theta_dot color=lightgrey]
+		5 [label=bias color=lightgrey]
+	}
 	6 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
 	7 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
 	8 [label=tanh color=greenyellow fillcolor=greenyellow style=filled]
@@ -30,7 +33,10 @@ digraph {
 	25 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
 	26 [label=Linear color=lightslategrey fillcolor=lightslategrey style=filled]
 	27 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
-	28 [label=force color=black]
+	28 [label=x color=black]
+	{
+		rank=same
+	}
 	0 -> 10
 	1 -> 6
 	1 -> 7

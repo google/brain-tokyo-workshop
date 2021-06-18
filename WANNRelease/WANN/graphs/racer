@@ -2,23 +2,26 @@ digraph {
 	ranksep=1.5
 	graph [rankdir=LR]
 	node [shape=oval]
-	0 [label=latent01 color=lightslategrey]
-	1 [label=latent02 color=lightslategrey]
-	2 [label=latent03 color=lightslategrey]
-	3 [label=latent04 color=lightslategrey]
-	4 [label=latent05 color=lightslategrey]
-	5 [label=latent06 color=lightslategrey]
-	6 [label=latent07 color=lightslategrey]
-	7 [label=latent08 color=lightslategrey]
-	8 [label=latent09 color=lightslategrey]
-	9 [label=latent10 color=lightslategrey]
-	10 [label=latent11 color=lightslategrey]
-	11 [label=latent12 color=lightslategrey]
-	12 [label=latent13 color=lightslategrey]
-	13 [label=latent14 color=lightslategrey]
-	14 [label=latent15 color=lightslategrey]
-	15 [label=latent16 color=lightslategrey]
-	16 [label=bias color=lightslategrey]
+	{
+		rank=same
+		0 [label=latent01 color=lightgrey]
+		1 [label=latent02 color=lightgrey]
+		2 [label=latent03 color=lightgrey]
+		3 [label=latent04 color=lightgrey]
+		4 [label=latent05 color=lightgrey]
+		5 [label=latent06 color=lightgrey]
+		6 [label=latent07 color=lightgrey]
+		7 [label=latent08 color=lightgrey]
+		8 [label=latent09 color=lightgrey]
+		9 [label=latent10 color=lightgrey]
+		10 [label=latent11 color=lightgrey]
+		11 [label=latent12 color=lightgrey]
+		12 [label=latent13 color=lightgrey]
+		13 [label=latent14 color=lightgrey]
+		14 [label=latent15 color=lightgrey]
+		15 [label=latent16 color=lightgrey]
+		16 [label=bias color=lightgrey]
+	}
 	17 [label=Linear color=lightslategrey fillcolor=lightslategrey style=filled]
 	18 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
 	19 [label="Absolute Value" color=skyblue fillcolor=skyblue style=filled]
@@ -105,9 +108,12 @@ digraph {
 	100 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
 	101 [label=Sin color=orange fillcolor=orange style=filled]
 	102 [label=tanh color=greenyellow fillcolor=greenyellow style=filled]
-	103 [label=steer color=black]
-	104 [label=gas color=black]
-	105 [label=brakes color=black]
+	103 [label=latent01 color=black]
+	104 [label=latent02 color=black]
+	105 [label=latent03 color=black]
+	{
+		rank=same
+	}
 	0 -> 30
 	0 -> 35
 	0 -> 40
