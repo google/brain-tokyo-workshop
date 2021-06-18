@@ -2,7 +2,6 @@ import numpy as np
 import argparse
 import sys
 from graphviz import Digraph
-from PIL import Image
 
 from wann_src import *
 from domain import *
@@ -63,12 +62,7 @@ def main(argv):
     for i in range(len(farray)):
         graph.edge(str(farray[i]),str(tarray[i]))
 
-        
-    graph.render(outPref)
-
-    if view:
-        img = Image.open(outPref+'.png')
-        img.show()
+    graph.render(outPref, view=view)
     
 
 # -- --------------------------------------------------------------------- -- #
@@ -98,7 +92,7 @@ if __name__ == "__main__":
                         help='hyperparameter file', default=None)
   
     parser.add_argument('-v', '--view', type=str2bool,\
-                        help='Visualize trial?', default=False)
+                        help='Visualize graph?', default=False)
 
     args = parser.parse_args()
     main(args)
