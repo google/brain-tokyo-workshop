@@ -148,7 +148,7 @@ flagrun = Game(env_name='HumanoidFlagrunBulletEnv-v0',
   noise_bias=0.0,
   output_noise=[False, False, False],
   max_episode_length = 1600,
-  in_out_labels = ['label_'+str(x) for x in range(44)]
+  in_out_labels = ['in_label_'+str(x) for x in range(44)] + ['out_label_'+str(x) for x in range(17)]
 )
 games['flagrun'] = flagrun
 
