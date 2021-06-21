@@ -2,7 +2,7 @@ digraph {
 	ranksep=1.5
 	graph [rankdir=LR]
 	node [shape=oval]
-	{
+	subgraph input {
 		rank=same
 		0 [label=x color=lightgrey]
 		1 [label=x_dot color=lightgrey]
@@ -33,9 +33,9 @@ digraph {
 	25 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
 	26 [label=Linear color=lightslategrey fillcolor=lightslategrey style=filled]
 	27 [label=Inverse color=turquoise fillcolor=turquoise style=filled]
-	28 [label=x color=black]
-	{
+	subgraph output {
 		rank=same
+		28 [label=force color=black]
 	}
 	0 -> 10
 	1 -> 6

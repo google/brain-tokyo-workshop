@@ -2,7 +2,7 @@ digraph {
 	ranksep=1.5
 	graph [rankdir=LR]
 	node [shape=oval]
-	{
+	subgraph input {
 		rank=same
 		0 [label=1 color=lightgrey]
 		1 [label=2 color=lightgrey]
@@ -868,18 +868,18 @@ digraph {
 	860 [label=Gausian color=gold fillcolor=gold style=filled]
 	861 [label=Sin color=orange fillcolor=orange style=filled]
 	862 [label="Sigmoid unsigned" color=yellowgreen fillcolor=yellowgreen style=filled]
-	863 [label=1 color=black]
-	864 [label=2 color=black]
-	865 [label=3 color=black]
-	866 [label=4 color=black]
-	867 [label=5 color=black]
-	868 [label=6 color=black]
-	869 [label=7 color=black]
-	870 [label=8 color=black]
-	871 [label=9 color=black]
-	872 [label=10 color=black]
-	{
+	subgraph output {
 		rank=same
+		863 [label=0 color=black]
+		864 [label=1 color=black]
+		865 [label=2 color=black]
+		866 [label=3 color=black]
+		867 [label=4 color=black]
+		868 [label=5 color=black]
+		869 [label=6 color=black]
+		870 [label=7 color=black]
+		871 [label=8 color=black]
+		872 [label=9 color=black]
 	}
 	2 -> 311
 	2 -> 869

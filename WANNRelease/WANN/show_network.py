@@ -29,6 +29,7 @@ def main(argv):
     hyp_default = args.default
     hyp_adjust  = args.hyperparam
     view = args.view
+    
 
     # Load parameters
     hyp = loadHyp(pFileName=hyp_default)
@@ -36,16 +37,17 @@ def main(argv):
     input_size = games[hyp['task']].input_size
     output_size = games[hyp['task']].output_size
     in_out_labels = games[hyp['task']].in_out_labels
-    #if not games[hyp['task']].env_name.startswith('Classify'):
-    in_out_labels.insert(input_size,'bias')
+
+    in_labels = in_out_labels[:input_size] + ['bias']
+    out_labels = in_out_labels[input_size:]
+    
     
     # Import individual for testing
     wVec, aVec, wKey = importNet(infile)
-
     dim = int(np.sqrt(np.shape(wVec)[0]))
     wVec = np.reshape(wVec,(dim,dim))
 
-    
+
     
     # aVec:[N*1], wVec:[N**2 * 1]
     graph = Digraph(engine='dot', format="svg")
@@ -53,21 +55,22 @@ def main(argv):
     graph.attr('graph', rankdir="LR")
     graph.attr("node", shape="oval")
 
-    with graph.subgraph() as sub:
+    
+    with graph.subgraph(name='input') as sub:
         sub.attr(rank='same')
         for i in range(input_size+1):
-            sub.node(str(i), str(in_out_labels[i]), color='lightgrey')
-        
+            sub.node(str(i), str(in_labels[i]), color='lightgrey')
+
     for i in range(input_size+1,dim-output_size):
         label, color = actNum2str(aVec[i])
         graph.node(str(i), label,color=color,\
             style='filled', fillcolor=color)
-        
-    with graph.subgraph() as sub:
+
+    with graph.subgraph(name='output') as sub:
         sub.attr(rank='same')
-        for i in range(dim-output_size,dim):
-            j = i-dim+output_size
-            graph.node(str(i), str(in_out_labels[j]), color='black')
+        for i in range(output_size):
+            j = dim-output_size+i
+            sub.node(str(j), str(out_labels[i]), color='black')
         
             
     (farray, tarray) = np.where(wVec!=0)

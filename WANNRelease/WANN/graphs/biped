@@ -2,7 +2,7 @@ digraph {
 	ranksep=1.5
 	graph [rankdir=LR]
 	node [shape=oval]
-	{
+	subgraph input {
 		rank=same
 		0 [label=hull_angle color=lightgrey]
 		1 [label=hull_vel_angle color=lightgrey]
@@ -104,12 +104,12 @@ digraph {
 	96 [label="Unsigned Step Function" color=tomato fillcolor=tomato style=filled]
 	97 [label=Relu color=dodgerblue fillcolor=dodgerblue style=filled]
 	98 [label="Sigmoid unsigned" color=yellowgreen fillcolor=yellowgreen style=filled]
-	99 [label=hull_angle color=black]
-	100 [label=hull_vel_angle color=black]
-	101 [label=vel_x color=black]
-	102 [label=vel_y color=black]
-	{
+	subgraph output {
 		rank=same
+		99 [label=hip_1 color=black]
+		100 [label=knee_1 color=black]
+		101 [label=hip_2 color=black]
+		102 [label=knee_2 color=black]
 	}
 	0 -> 45
 	1 -> 25
