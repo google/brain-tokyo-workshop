@@ -39,7 +39,7 @@ class DataGatherer():
     conns = np.asarray([ind.nConn for ind in pop])
     
     # --- Evaluation Scale ---------------------------------------------------
-    if len(self.x_scale) is 0:
+    if len(self.x_scale) == 0:
       self.x_scale = np.append(self.x_scale, len(pop))
     else:
       self.x_scale = np.append(self.x_scale, self.x_scale[-1]+len(pop))
@@ -48,7 +48,7 @@ class DataGatherer():
     
     # --- Best Individual ----------------------------------------------------
     self.elite.append(pop[np.argmax(fitness)])
-    if len(self.best) is 0:
+    if len(self.best) == 0:
       self.best = copy.deepcopy(self.elite)
     elif (self.elite[-1].fitness > self.best[-1].fitness):
       self.best = np.append(self.best,copy.deepcopy(self.elite[-1]))

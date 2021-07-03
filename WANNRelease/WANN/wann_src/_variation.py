@@ -349,22 +349,22 @@ def topoMutate(self,child,innov,gen):
       slot += topoRoulette[i]
 
   # Add Connection
-  if choice is 1:
+  if choice == 1:
     connG, innov = self.mutAddConn(connG, nodeG, innov, gen)  
 
   # Add Node
-  elif choice is 2:
+  elif choice == 2:
     connG, nodeG, innov = self.mutAddNode(connG, nodeG, innov, gen)
 
   # Enable Connection
-  elif choice is 3:
+  elif choice == 3:
     disabled = np.where(connG[4,:] == 0)[0]
     if len(disabled) > 0:
       enable = np.random.randint(len(disabled))
       connG[4,disabled[enable]] = 1
 
   # Mutate Activation
-  elif choice is 4:
+  elif choice == 4:
     start = 1+child.nInput + child.nOutput
     end = nodeG.shape[1]           
     if start != end:
