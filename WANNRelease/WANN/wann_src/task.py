@@ -36,7 +36,8 @@ class Task():
       self.env = make_env(game.env_name)
 
     # Special needs...
-    self.needsClosed = (game.env_name.startswith("CartPoleSwingUp"))    
+    self.needsClosed = (game.env_name.startswith("CartPoleSwingUp"))
+    
   
 
   def testInd(self, wVec, aVec, view=False,seed=-1):

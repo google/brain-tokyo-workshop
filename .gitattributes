@@ -1,0 +1,2 @@
+WANNRelease/WANN/log/test_objVals.out filter=lfs diff=lfs merge=lfs -text
+WANNRelease/WANN/log/test_pop.obj filter=lfs diff=lfs merge=lfs -text

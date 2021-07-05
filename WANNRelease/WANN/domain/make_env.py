@@ -7,7 +7,7 @@ def make_env(env_name, seed=-1, render_mode=False):
     import pybullet as p
     import pybullet_envs
     import pybullet_envs.bullet.kukaGymEnv as kukaGymEnv
-
+    gym.logger.set_level(40)
 
   # -- Bipedal Walker ------------------------------------------------ -- #
   if (env_name.startswith("BipedalWalker")):
@@ -49,6 +49,9 @@ def make_env(env_name, seed=-1, render_mode=False):
     from domain.cartpole_swingup import CartPoleSwingUpEnv
     env = CartPoleSwingUpEnv()
 
+  # -- Humanoid Flagrun ---------------------------------------------- -- #
+  elif (env_name.startswith("HumanoidFlagrun")):
+    env = gym.make('HumanoidFlagrunBulletEnv-v0')
 
   # -- Other  -------------------------------------------------------- -- #
   else:

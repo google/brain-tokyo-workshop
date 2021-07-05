@@ -133,4 +133,22 @@ biped = Game(env_name='BipedalWalker-v2',
 )
 games['biped'] = biped
 
+# -- Humanoid Flagrun ---------------------------------------------------- -- #
+
+bullet_flagrun = Game(env_name='HumanoidFlagrunBulletEnv-v0',
+  actionSelect='all', # all, soft, hard
+  input_size=44,
+  output_size=17,
+  time_factor=0,
+  layers=[10, 10], # Might be changed
+  i_act=np.full(44,1),
+  h_act=[1,2,3,4,5,6,7,8,9,10],
+  o_act=np.full(17,1),
+  weightCap = 2.0,
+  noise_bias=0.0,
+  output_noise=[False, False, False],
+  max_episode_length = 1600,
+  in_out_labels = ['in_label_'+str(x) for x in range(44)] + ['out_label_'+str(x) for x in range(17)]
+)
+games['bullet_flagrun'] = bullet_flagrun
 
