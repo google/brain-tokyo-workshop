@@ -20,9 +20,9 @@ from domain import *   # Task environments
 def master(): 
   """Main WANN optimization script
   """
-  global fileName, hyp
+  global fileName, hyp, inPath, exnum
   data = DataGatherer(fileName, hyp)
-  wann = Wann(hyp)
+  wann = Wann(hyp, inPath, exnum)
 
   for gen in range(hyp['maxGen']):        
     pop = wann.ask()            # Get newly evolved individuals from WANN  
@@ -246,10 +246,12 @@ def main(argv):
   """Handles command line input, launches optimization or evaluation script
   depending on MPI rank.
   """
-  global fileName, hyp
+  global fileName, hyp, inPath, exnum
   fileName    = args.outPrefix
   hyp_default = args.default
   hyp_adjust  = args.hyperparam
+  inPath = args.inPath
+  exnum = args.num_existing
 
   hyp = loadHyp(pFileName=hyp_default)
   updateHyp(hyp,hyp_adjust)
@@ -275,6 +277,12 @@ if __name__ == "__main__":
   
   parser.add_argument('-n', '--num_worker', type=int,\
    help='number of cores to use', default=8)
+
+  parser.add_argument('-i', '--inPath', type=str,\
+                      help='path to existing WANN(s)', default=None)
+  
+  parser.add_argument('-e', '--num_existing', type=int,\
+                      help='number of individuals to import', default=0)
 
   args = parser.parse_args()
 

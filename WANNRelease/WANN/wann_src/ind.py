@@ -1,5 +1,6 @@
 import numpy as np
 import copy
+import os
 
 
 # -- Individual Class ---------------------------------------------------- -- #
@@ -354,7 +355,7 @@ integers interpreted as activation functions as per the 'act' function above
 def exportNet(filename,wMat, aVec):
   indMat = np.c_[wMat,aVec]
   np.savetxt(filename, indMat, delimiter=',',fmt='%1.2e')
-
+    
 def importNet(fileName):
   ind = np.loadtxt(fileName, delimiter=',')
   wMat = ind[:,:-1]     # Weight Matrix
@@ -367,3 +368,89 @@ def importNet(fileName):
 
   return wVec, aVec, wKey
 
+def vec2ind(p, wVec, aVec, wKey, rand=False):
+  dim = int(np.sqrt(np.shape(wVec)[0]))
+  wVec = np.reshape(wVec,(dim,dim))
+
+  # - Create Nodes -
+  nodeId = np.arange(0, len(aVec), 1)
+  node = np.empty((3,len(nodeId)))
+  node[0,:] = nodeId
+
+  node[1,0] = 4 # Bias
+  node[1,1:p['ann_nInput']+1] = 1 # Input
+  node[1,(p['ann_nInput']+1):\
+       (p['ann_nInput']+p['ann_nOutput']+1)] = 2 # Output
+  node[1,(p['ann_nInput']+p['ann_nOutput']+1):] = 3 # Others
+
+  node[2,:(p['ann_nInput']+p['ann_nOutput']+1)] = p['ann_initAct']
+  node[2,(p['ann_nInput']+p['ann_nOutput']+1):] = aVec[p['ann_nInput']+p['ann_nOutput']:-1]
+
+  def calc_index(num):
+    if num < p['ann_nInput']:  # input
+      return num+1
+    elif num == p['ann_nInput']: # bias
+      return 0
+    elif num < p['ann_nInput']+p['ann_nOutput']+2: # others
+      return num+p['ann_nOutput']
+    else: # output
+      return num-(p['ann_nOutput']+1)
+
+  # - Create Conns -
+  nConn = (p['ann_nInput']+1) * p['ann_nOutput']
+  ins   = np.arange(0,p['ann_nInput']+1,1)
+  outs  = (p['ann_nInput']+1) + np.arange(0,p['ann_nOutput'])
+
+  conn = np.empty((5,nConn,))
+  conn[0,:] = np.arange(0,nConn,1)
+  conn[1,:] = np.tile(ins, len(outs))
+  conn[2,:] = np.repeat(outs,len(ins))
+  conn[3,:] = 1
+  conn[4,:] = 0
+  
+  if rand is True:
+    conn[4,:] = np.random.rand(1,nConn) < p['prob_initEnable']
+
+  (src, dest) = np.where(wVec==1)
+  j = 0
+  for i in range(len(src)):
+    x, y = calc_index(src[i]), calc_index(dest[i])
+    if (node[1,x] == 1 or node[1,x] == 4)  and node[1,y] == 2:
+      index = np.where((conn[1,:]==x) & (conn[2,:]==y))[0]
+      conn[4,index] = 1
+    else:
+      add_conn = np.array([nConn + j, node[0,x], node[0,y], 1., 1.])
+      conn = np.insert(conn, conn.shape[1], add_conn, axis=1)
+      j += 1
+
+  return conn, node
+    
+def importInd(path, exnum, p):
+  pop = []
+  if not os.path.exists(path):
+      return pop
+
+  if path.endswith('.out'):
+    for i in range(exnum):
+      wVec, aVec, wKey = importNet(path)
+      conn, node = vec2ind(p, wVec, aVec, wKey, True)
+      newInd = Ind(conn, node)
+      newInd.express()
+      newInd.birth = 0
+      pop.append(copy.deepcopy(newInd))
+    return pop
+
+  else:
+    files = os.listdir(path=path)
+    if exnum > len(files):
+      exnum = len(files)
+    choosen = np.random.choice(files, size=exnum, replace=False)
+    
+    for filename in choosen:
+      wVec, aVec, wKey = importNet(filename)
+      conn, node = vec2ind(p, wVec, aVec, wKey)
+      newInd = Ind(conn, node)
+      newInd.express()
+      newInd.birth = 0
+      pop.append(copy.deepcopy(newInd))
+    return pop

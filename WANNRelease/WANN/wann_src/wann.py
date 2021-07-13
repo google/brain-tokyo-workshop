@@ -10,16 +10,18 @@ from domain import *  # Task environments
 from .nsga_sort import nsga_sort
 from .task import Task
 
-from .ind import Ind
+from .ind import Ind, importInd
 
 
 class Wann():
   """WANN main class. Evolves population given fitness values of individuals.
   """
-  def __init__(self, hyp):
+  def __init__(self, hyp, inPath, exnum):
     """Intialize WANN algorithm with hyperparameters
     Args:
       hyp - (dict) - algorithm hyperparameters
+      inPath - (str) - path to exisitng individual(s)
+      exnum - (int) - number of existing networks to import
 
     Attributes:
       p       - (dict)     - algorithm hyperparameters (see p/hypkey.txt)
@@ -33,12 +35,20 @@ class Wann():
                 [3,:] == New Node?
                 [4,:] == Generation evolved
       gen     - (int)      - Current generation
+      inPath - (str) - path to exisitng individual(s)
+      exnum - (int) - number of existing networks to import
     """
     self.p = hyp       # Hyperparameters
     self.pop = []      # Current population
     self.species = []  # Current species   
     self.innov = []    # Innovation number (gene Id)
     self.gen = 0
+    self.inPath = inPath
+    
+    if exnum > self.p['popSize']:  # Prevent overpopulation
+      self.exnum = self.p['popSize']
+    else:
+      self.exnum = exnum
 
   ''' Subfunctions '''
   from ._variation import evolvePop, recombine, crossover,\
@@ -107,7 +117,12 @@ class Wann():
         
     # Create population of individuals (for WANN weight value doesn't matter)
     pop = []
-    for i in range(p['popSize']):
+    if self.inPath is not None:
+        pop = importNet(self.inPath, self.exnum, p)
+        
+    newIndSize = p['popSize'] - len(pop)
+    
+    for i in range(newIndSize):
         newInd = Ind(conn, node)
         newInd.conn[3,:] = 1 #(2*(np.random.rand(1,nConn)-0.5))*p['ann_absWCap']
         newInd.conn[4,:] = np.random.rand(1,nConn) < p['prob_initEnable']
