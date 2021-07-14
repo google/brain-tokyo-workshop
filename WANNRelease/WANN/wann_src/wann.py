@@ -118,7 +118,7 @@ class Wann():
     # Create population of individuals (for WANN weight value doesn't matter)
     pop = []
     if self.inPath is not None:
-        pop = importNet(self.inPath, self.exnum, p)
+        pop = copy.deepcopy(importInd(self.inPath, self.exnum, p))
         
     newIndSize = p['popSize'] - len(pop)
     
@@ -131,7 +131,7 @@ class Wann():
         pop.append(copy.deepcopy(newInd))  
 
     # - Create Innovation Record -
-    innov = np.zeros([5,nConn])
+    innov = np.zeros([5,len(pop[0].conn[0,:])])
     innov[0:3,:] = pop[0].conn[0:3,:]
     innov[3,:] = -1
     

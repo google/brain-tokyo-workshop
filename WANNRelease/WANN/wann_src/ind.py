@@ -386,16 +386,6 @@ def vec2ind(p, wVec, aVec, wKey, rand=False):
   node[2,:(p['ann_nInput']+p['ann_nOutput']+1)] = p['ann_initAct']
   node[2,(p['ann_nInput']+p['ann_nOutput']+1):] = aVec[p['ann_nInput']+p['ann_nOutput']:-1]
 
-  def calc_index(num):
-    if num < p['ann_nInput']:  # input
-      return num+1
-    elif num == p['ann_nInput']: # bias
-      return 0
-    elif num < p['ann_nInput']+p['ann_nOutput']+2: # others
-      return num+p['ann_nOutput']
-    else: # output
-      return num-(p['ann_nOutput']+1)
-
   # - Create Conns -
   nConn = (p['ann_nInput']+1) * p['ann_nOutput']
   ins   = np.arange(0,p['ann_nInput']+1,1)
@@ -410,12 +400,30 @@ def vec2ind(p, wVec, aVec, wKey, rand=False):
   
   if rand is True:
     conn[4,:] = np.random.rand(1,nConn) < p['prob_initEnable']
+  
+  hashtable = dict()
+  num_other = len(aVec)-p['ann_nInput']-p['ann_nOutput']-1
+  aVec_index = [p['ann_nInput']] \
+    + [i for i in range(p['ann_nInput'])] \
+    + [i+p['ann_nInput']+1 for i in range(num_other)] \
+    + [p['ann_nInput']+p['ann_nOutput']+num_other+i for i in range(p['ann_nOutput'])]
 
+  node_index = [0] \
+    + [i+1 for i in range(p['ann_nInput'])] \
+    + [i+p['ann_nInput']+1+p['ann_nOutput'] \
+       for i in range(num_other)] \
+    + [p['ann_nInput']+p['ann_nOutput']+num_other+i-1 \
+       for i in range(p['ann_nOutput'])]
+    
+  for key, value in zip(aVec_index, node_index):
+    hashtable[key] = value
+
+  #print(aVec,'\n',node[0,:],'\n',hashtable)
   (src, dest) = np.where(wVec==1)
   j = 0
   for i in range(len(src)):
-    x, y = calc_index(src[i]), calc_index(dest[i])
-    if (node[1,x] == 1 or node[1,x] == 4)  and node[1,y] == 2:
+    x, y = hashtable.get(src[i]), hashtable.get(dest[i])
+    if (node[1,x] == 1 or node[1,x] == 4)  and node[1,y] == 2: # IN to OUT
       index = np.where((conn[1,:]==x) & (conn[2,:]==y))[0]
       conn[4,index] = 1
     else:
@@ -445,9 +453,8 @@ def importInd(path, exnum, p):
     if exnum > len(files):
       exnum = len(files)
     choosen = np.random.choice(files, size=exnum, replace=False)
-    
     for filename in choosen:
-      wVec, aVec, wKey = importNet(filename)
+      wVec, aVec, wKey = importNet(path+'/'+filename)
       conn, node = vec2ind(p, wVec, aVec, wKey)
       newInd = Ind(conn, node)
       newInd.express()
