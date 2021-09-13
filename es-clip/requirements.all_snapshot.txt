@@ -1,0 +1,9 @@
+ftfy==6.0.3
+regex==2021.8.28
+tqdm==4.62.2
+numpy==1.21.2
+Pillow==8.3.2
+torch==1.7.1
+torchvision==0.8.2
+pgpelib @ git+https://github.com/nnaisense/pgpelib.git@d00907fe4b237e875ac0cc5b9d9c22591e4a7206
+clip @ git+https://github.com/openai/CLIP.git@3b473b0e682c091a9e53623eebc1ca1657385717

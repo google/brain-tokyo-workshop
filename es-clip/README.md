@@ -18,17 +18,19 @@ For more information, please refer to <https://es-clip.github.io/>
 7. [CLIP](https://github.com/openai/CLIP) from OpenAI.
 
 Below is an example of setting up on a Linux machine with CUDA installed using Anaconda3 for your reference. 
-You may need to adjust accordingly for a CUDA-enabled PyTorch installation.
+It installs the most recent version for all dependencies.
+You may need to adjust accordingly for a CUDA-enabled PyTorch installation following instructions on <https://pytorch.org/>
 
 ```bash
 conda create -n es-clip-code python=3.8 -y    # Requirement 3 - Python Installation.
 pip install -r requirements.txt               # Requirement 4 - Python Packages.
-pip install torch torchvision                 # Requirement 5 - PyTorch. Refer to https://pytorch.org/ for installation instructions.
+pip install torch torchvision                 # Requirement 5 - PyTorch. 
 conda install swig -y                         # Needed by PGPElib below
 pip install 'git+https://github.com/nnaisense/pgpelib.git#egg=pgpelib'  # Requirement 6 - PEPGlib.
 pip install git+https://github.com/openai/CLIP.git  # Requirement 7 - CLIP.
-
 ```
+
+*Alternatively*, the snapshot of versions of dependencies is stored in `requirements.all_snapshot.txt` and can be used if you want to have exact versions of dependencies we used in development.
 
 ## Running Code
 
@@ -36,7 +38,6 @@ pip install git+https://github.com/openai/CLIP.git  # Requirement 7 - CLIP.
 ```bash
 conda activate es-clip-code
 ```
-
 
 ### Fitting a Bitmap
 
@@ -100,3 +101,7 @@ Specifically,
 
 - `es_bitmap.py` could effectively use multiple CPU cores, and has a perforances roughly proportional to the number of CPU cores.
 - `es_clip.py` could run reasonbly well with one GPU while more GPUs are better. It could also run in a CPU-only setting, but that would be too slow for a reasonble expectation.
+
+## Disclaimer
+
+This is not an official Google product.
