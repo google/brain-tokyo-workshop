@@ -5,7 +5,9 @@
 </p>
 
 This is the code for our work "Modern Evolution Strategies for Creativity: Fitting Concrete Images and Abstract Concepts".
-For more information, please refer to <https://es-clip.github.io/>
+For more information, please refer to <https://es-clip.github.io/>. 
+
+**Update**: Please scroll down for a section discribing community works.
 
 ## Requirements
 
@@ -101,6 +103,16 @@ Specifically,
 
 - `es_bitmap.py` could effectively use multiple CPU cores, and has a perforances roughly proportional to the number of CPU cores.
 - `es_clip.py` could run reasonbly well with one GPU while more GPUs are better. It could also run in a CPU-only setting, but that would be too slow for a reasonble expectation.
+
+
+## Community Works
+
+Here listed are some works by the community that are likely related to or based on this work. 
+Please [let us know](https://github.com/es-clip/es-clip.github.io/issues) if you think some works are missing and should be added here!
+**There are provided here for information purposes only and mentiong them does not consitute an endorsement, so proceed at your own discretion.**
+
+* [@eyaler](https://twitter.com/eyaler) Provided a [biggan + clip + cma-es work](https://github.com/eyaler/clip_biggan) as a [Colab notebook](https://colab.sandbox.google.com/github/eyaler/clip_biggan/blob/main/WanderCLIP.ipynb).
+* [@gestaltungai](https://twitter.com/gestaltungai) started a simple [Colab notebook](https://colab.research.google.com/drive/1DGNxs8E4cA_ZUwPQdusxDArCWj-JX5TG) to play with this work.
 
 ## Disclaimer
 
