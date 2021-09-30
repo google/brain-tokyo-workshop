@@ -94,15 +94,15 @@ For more options, consult the output of `python3 ./es_clip.py --help`.
 
 ## Performance
 
-ES algorithm needs to evaluate the fitnes for a pool of candidates. 
+ES algorithm needs to evaluate the fitness for a pool of candidates. 
 For an efficient processing, we implement a multi-processing computation for both fitting cases.
 We also make our code benifit from using multiple GPUs for fitting a text by placing multiple CLIP models on GPUs.
-While we develoop on [GCP](https://cloud.google.com/) machine with 64 cores and 8 Tesla V100 GPUs,
+While we develop on [GCP](https://cloud.google.com/) machine with 64 cores and 8 Tesla V100 GPUs,
 We found that our code could also run with fewer resources.
 Specifically,
 
-- `es_bitmap.py` could effectively use multiple CPU cores, and has a perforances roughly proportional to the number of CPU cores.
-- `es_clip.py` could run reasonbly well with one GPU while more GPUs are better. It could also run in a CPU-only setting, but that would be too slow for a reasonble expectation.
+- `es_bitmap.py` could effectively use multiple CPU cores, and has a performance roughly proportional to the number of CPU cores.
+- `es_clip.py` could run reasonably well with one GPU while more GPUs are better. It could also run in a CPU-only setting, but that would be too slow for a reasonble expectation.
 
 
 ## Community Works
