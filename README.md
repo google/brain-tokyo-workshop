@@ -38,11 +38,19 @@ This repo contains research materials released by members of the Google Brain te
 
 [Link to Article](https://attentionagent.github.io/) ([pdf version](https://arxiv.org/abs/2003.08165))
 
-## Modern Evolution Strategies for Creativity: Fitting Concrete Images and Abstract Concepts
+### Modern Evolution Strategies for Creativity: Fitting Concrete Images and Abstract Concepts
 
 <img width="50%" src="https://media.giphy.com/media/FsxTmSk3MIkDv7X6Eg/giphy.gif"></img>
 
 [Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/es-clip)
+
+### The Sensory Neuron as a Transformer: Permutation-Invariant Neural Networks for Reinforcement Learning
+
+![AttentionNeuron](AttentionNeuron/image/cover.gif)
+
+[Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/AttentionNeuron)  
+
+[Link to Article](https://attentionneuron.github.io/) ([pdf version](https://arxiv.org/abs/2109.02869))
 
 ## Disclaimer
 
