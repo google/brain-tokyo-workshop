@@ -1,0 +1,8 @@
+numpy
+torch
+torchvision
+gym[box2d]
+pybullet
+gin-config
+cma
+opencv-python

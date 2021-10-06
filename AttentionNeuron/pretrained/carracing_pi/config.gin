@@ -1,0 +1,26 @@
+import util
+import solutions.torch_solutions
+import tasks.rl_tasks
+
+
+# Solution configurations
+torch_solutions.PIAttentionAgent.act_dim = 3
+torch_solutions.PIAttentionAgent.msg_dim = 16
+torch_solutions.PIAttentionAgent.pos_em_dim = 8
+torch_solutions.PIAttentionAgent.patch_size = 6
+torch_solutions.PIAttentionAgent.stack_k = 4
+torch_solutions.PIAttentionAgent.aa_image_size = 32
+torch_solutions.PIAttentionAgent.aa_query_dim = 4
+torch_solutions.PIAttentionAgent.aa_hidden_dim = 16
+torch_solutions.PIAttentionAgent.aa_top_k = 10
+util.create_solution.solution_loader = @torch_solutions.PIAttentionAgent
+
+
+# Task configurations
+rl_tasks.CarRacingTask.bkg = None
+rl_tasks.CarRacingTask.permute_obs = True
+rl_tasks.CarRacingTask.out_of_track_cap = 20
+rl_tasks.CarRacingTask.patch_size = 6
+rl_tasks.CarRacingTask.stack_k_frames = 4
+rl_tasks.CarRacingTask.render = True
+util.create_task.task_loader = @rl_tasks.CarRacingTask()

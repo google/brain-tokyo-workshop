@@ -1,0 +1,23 @@
+import util
+import solutions.torch_solutions
+import tasks.rl_tasks
+
+
+# Solution configurations
+torch_solutions.AttentionAgent.image_size = 96
+torch_solutions.AttentionAgent.query_dim = 4
+torch_solutions.AttentionAgent.patch_size = 7
+torch_solutions.AttentionAgent.patch_stride = 4
+torch_solutions.AttentionAgent.hidden_dim = 16
+torch_solutions.AttentionAgent.top_k = 10
+util.create_solution.solution_loader = @torch_solutions.AttentionAgent
+
+
+# Task configurations
+rl_tasks.CarRacingTask.bkg = None
+rl_tasks.CarRacingTask.permute_obs = False
+rl_tasks.CarRacingTask.out_of_track_cap = 20
+rl_tasks.CarRacingTask.patch_size = 6
+rl_tasks.CarRacingTask.stack_k_frames = 0
+rl_tasks.CarRacingTask.render = True
+util.create_task.task_loader = @rl_tasks.CarRacingTask()

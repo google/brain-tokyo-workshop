@@ -1,0 +1,21 @@
+import util
+import solutions.torch_solutions
+import tasks.rl_tasks
+
+
+# Solution configurations
+torch_solutions.PIFCSolution.act_dim = 1
+torch_solutions.PIFCSolution.hidden_dim = 16
+torch_solutions.PIFCSolution.msg_dim = 32
+torch_solutions.PIFCSolution.pos_em_dim = 8
+torch_solutions.PIFCSolution.num_hidden_layers = 0
+torch_solutions.PIFCSolution.pi_layer_bias = False
+torch_solutions.PIFCSolution.pi_layer_scale = False
+util.create_solution.solution_loader = @torch_solutions.PIFCSolution
+
+
+# Task configurations
+rl_tasks.CartPoleSwingUpTask.shuffle_on_reset = False
+rl_tasks.CartPoleSwingUpTask.render = False
+rl_tasks.CartPoleSwingUpTask.v = False
+util.create_task.task_loader = @rl_tasks.CartPoleSwingUpTask()

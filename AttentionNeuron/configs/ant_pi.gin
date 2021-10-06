@@ -1,0 +1,19 @@
+import util
+import solutions.torch_solutions
+import tasks.rl_tasks
+
+
+# Solution configurations
+torch_solutions.PIFCSolution.act_dim = 8
+torch_solutions.PIFCSolution.hidden_dim = 32
+torch_solutions.PIFCSolution.msg_dim = 32
+torch_solutions.PIFCSolution.pos_em_dim = 8
+util.create_solution.solution_loader = @torch_solutions.PIFCSolution
+
+
+# Task configurations
+rl_tasks.PyBulletTask.env_name = "AntBulletEnv-v0"
+rl_tasks.PyBulletTask.shuffle_on_reset = False
+rl_tasks.PyBulletTask.render = False
+rl_tasks.PyBulletTask.v = False
+util.create_task.task_loader = @rl_tasks.PyBulletTask()
