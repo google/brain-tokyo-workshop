@@ -45,9 +45,7 @@ This repo contains research materials released by members of the Google Brain te
 [Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/es-clip)
 
 ### The Sensory Neuron as a Transformer: Permutation-Invariant Neural Networks for Reinforcement Learning
-<img width="50%" src="https://media.giphy.com/media/OZHNm0MqNLCE4MtN9j/giphy.gif"></img>
-
-https://media.giphy.com/media/OZHNm0MqNLCE4MtN9j/giphy.gif
+<img width="100%" src="https://media.giphy.com/media/OZHNm0MqNLCE4MtN9j/giphy.gif"></img>
 
 [Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/AttentionNeuron)  
 
