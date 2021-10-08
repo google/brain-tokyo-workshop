@@ -70,13 +70,14 @@ python train_agent.py --config=configs/carracing_pi.gin \
 For attribution in academic contexts, please cite this work as
 
 ```
-@inproceedings{attentionneuron2021,
+@incollection{attentionneuron2021,
   author    = {Yujin Tang and David Ha},
   title     = {The Sensory Neuron as a Transformer: Permutation-Invariant Neural Networks for Reinforcement Learning},
-  booktitle = {Advances in neural information processing systems},
+  booktitle = {Advances in Neural Information Processing Systems 34},
+  year      = {2021},
+  publisher = {Curran Associates, Inc.},
   url       = {https://attentionneuron.github.io},
   note      = "\url{https://attentionneuron.github.io}",
-  year      = {2021}
 }
 ```
 
