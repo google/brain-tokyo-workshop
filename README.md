@@ -7,7 +7,7 @@ This repo contains research materials released by members of the Google Brain te
 ### Weight Agnostic Neural Networks ###
 
 <p align="left">
-  <img width="50%" src="WANNRelease/prettyNEAT/demo/img/swing.gif"></img>
+  <img width="50%" src="https://media.giphy.com/media/nd0gBOAeT5YYutRRxx/giphy.gif"></img>
 </p>
 
 [Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/WANNRelease)
@@ -17,7 +17,7 @@ This repo contains research materials released by members of the Google Brain te
 ### Learning to Predict Without Looking Ahead: World Models Without Forward Prediction ###
 
 <p align="left">
-  <img width="50%" src="learntopredict/assets/learntopredict.gif"></img>
+  <img width="50%" src="https://media.giphy.com/media/7gNy7xjBOZJFiD6T2F/giphy.gif"></img>
 </p>
 
 [Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/learntopredict)
@@ -45,8 +45,9 @@ This repo contains research materials released by members of the Google Brain te
 [Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/es-clip)
 
 ### The Sensory Neuron as a Transformer: Permutation-Invariant Neural Networks for Reinforcement Learning
+<img width="50%" src="https://media.giphy.com/media/OZHNm0MqNLCE4MtN9j/giphy.gif"></img>
 
-![AttentionNeuron](AttentionNeuron/image/cover.gif)
+https://media.giphy.com/media/OZHNm0MqNLCE4MtN9j/giphy.gif
 
 [Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/AttentionNeuron)  
 

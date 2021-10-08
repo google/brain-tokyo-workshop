@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="125%" src="WANN/champions/wRange_biped.gif">
+  <img width="100%" src="https://media.giphy.com/media/Q7IjOrLxlydlyb2kZL/giphy.gif">
 </p>
 
 # Weight Agnostic Neural Networks

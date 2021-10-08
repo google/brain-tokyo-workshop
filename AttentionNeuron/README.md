@@ -1,6 +1,6 @@
 # The Sensory Neuron as a Transformer: Permutation-Invariant Neural Networks for Reinforcement Learning
 
-![attention_agent](image/cover.gif)
+<img width="100%" src="https://media.giphy.com/media/OZHNm0MqNLCE4MtN9j/giphy.gif"></img>
 
 This is the code for our AttentionNeuron [paper](https://arxiv.org/abs/2109.02869).
 For more information, please refer to our [web site](https://attentionneuron.github.io/).

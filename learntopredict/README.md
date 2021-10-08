@@ -1,7 +1,7 @@
 # Code for Learning to Predict Without Looking Ahead: World Models Without Forward Prediction
 
 <p align="left">
-  <img width="50%" src="assets/learntopredict.gif">
+  <img width="50%" src="https://media.giphy.com/media/7gNy7xjBOZJFiD6T2F/giphy.gif">
 </p>
 
 This directory contains code to reproduce experiments in our paper *Learning to Predict Without Looking Ahead: World Models Without Forward Prediction*
