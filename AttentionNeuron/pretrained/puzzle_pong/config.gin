@@ -1,0 +1,21 @@
+import util
+import solutions.torch_solutions
+import tasks.rl_tasks
+
+
+# Solution configurations
+torch_solutions.PuzzlePongSolution.act_dim = 6
+torch_solutions.PuzzlePongSolution.msg_dim = 32
+torch_solutions.PuzzlePongSolution.pos_em_dim = 8
+torch_solutions.PuzzlePongSolution.patch_size = 6
+torch_solutions.PuzzlePongSolution.stack_k = 4
+torch_solutions.PuzzlePongSolution.feat_dim = 20
+util.create_solution.solution_loader = @torch_solutions.PuzzlePongSolution
+
+
+# Task configurations
+rl_tasks.PuzzlePongTask.permute_obs = True
+rl_tasks.PuzzlePongTask.patch_size = 6
+rl_tasks.PuzzlePongTask.occlusion_ratio = 0.0
+rl_tasks.PuzzlePongTask.render = True
+util.create_task.task_loader = @rl_tasks.PuzzlePongTask()

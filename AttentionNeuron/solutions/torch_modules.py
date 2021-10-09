@@ -131,13 +131,16 @@ class VisionAttentionNeuronLayer(nn.Module):
                  msg_dim,
                  pos_em_dim,
                  patch_size=6,
-                 stack_k=4):
+                 stack_k=4,
+                 with_learnable_ln_params=False,
+                 stack_dim_first=False):
         super(VisionAttentionNeuronLayer, self).__init__()
         self.act_dim = act_dim
         self.hidden_dim = hidden_dim
         self.msg_dim = msg_dim
         self.patch_size = patch_size
         self.stack_k = stack_k
+        self.stack_dim_first = stack_dim_first
         self.pos_em_dim = pos_em_dim
         self.pos_embedding = torch.from_numpy(
             pos_table(self.hidden_dim, self.pos_em_dim)
@@ -152,12 +155,14 @@ class VisionAttentionNeuronLayer(nn.Module):
         # The normalization layers have no learnable parameters.
         self.input_ln = nn.LayerNorm(
             normalized_shape=self.patch_size**2,
-            elementwise_affine=False,
+            elementwise_affine=with_learnable_ln_params,
         )
+        self.input_ln.eval()
         self.output_ln = nn.LayerNorm(
             normalized_shape=self.msg_dim,
-            elementwise_affine=False,
+            elementwise_affine=with_learnable_ln_params,
         )
+        self.output_ln.eval()
 
     def get_patches(self, x):
         h, w, c = x.size()
@@ -168,9 +173,19 @@ class VisionAttentionNeuronLayer(nn.Module):
         return patches.reshape((-1, self.patch_size, self.patch_size, c))
 
     def forward(self, obs, prev_act):
+        if isinstance(obs, dict):
+            # Puzzle pong may drop some patches.
+            patch_to_keep_ix = obs['patches_to_use']
+            obs = obs['obs']
+        else:
+            patch_to_keep_ix = None
+
         k, h, w = obs.shape
         assert k == self.stack_k
-        num_patches = (h // self.patch_size) * (w // self.patch_size)
+        if patch_to_keep_ix is None:
+            num_patches = (h // self.patch_size) * (w // self.patch_size)
+        else:
+            num_patches = patch_to_keep_ix.size
 
         # AttentionNeuron is the first layer, so obs is numpy array.
         x_obs = torch.div(torch.from_numpy(obs).float(), 255.)
@@ -178,8 +193,12 @@ class VisionAttentionNeuronLayer(nn.Module):
         # Create Key.
         x_k = torch.diff(x_obs, dim=0).permute(1, 2, 0)
         x_k = self.get_patches(x_k)
+        if patch_to_keep_ix is not None:
+            x_k = x_k[patch_to_keep_ix]
         assert x_k.shape == (
             num_patches, self.patch_size, self.patch_size, self.stack_k - 1)
+        if self.stack_dim_first:
+            x_k = x_k.permute(0, 3, 1, 2)
         x_k = torch.cat([
             torch.flatten(x_k, start_dim=1),
             torch.repeat_interleave(prev_act, repeats=num_patches, dim=0)
@@ -187,6 +206,8 @@ class VisionAttentionNeuronLayer(nn.Module):
 
         # Create Value.
         x_v = self.get_patches(x_obs.permute(1, 2, 0)).permute(0, 3, 1, 2)
+        if patch_to_keep_ix is not None:
+            x_v = x_v[patch_to_keep_ix]
         x_v = self.input_ln(torch.flatten(x_v, start_dim=2))
 
         x = self.attention(

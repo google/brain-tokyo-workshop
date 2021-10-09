@@ -6,6 +6,7 @@ import gym
 import numpy as np
 import time
 import pybullet_envs
+from tasks import atari_wrappers
 from tasks.base_task import BaseTask
 from tasks.cartpole_env import CartPoleSwingUpHarderEnv
 
@@ -195,7 +196,7 @@ class CarRacingTask(RLTask):
             
     def seed(self, seed=None):
         self.rnd = np.random.RandomState(seed=seed)
-        return super(CarRacingTask, self).seed()
+        return super(CarRacingTask, self).seed(seed)
 
     def modify_action(self, act):
         return (act * (self._action_high - self._action_low) / 2. +
@@ -315,3 +316,38 @@ class CarRacingTask(RLTask):
             cv2.imshow('render', img)
             cv2.waitKey(1)
         return super(CarRacingTask, self).show_gui()
+
+
+@gin.configurable
+class PuzzlePongTask(RLTask):
+    """Atari Pong."""
+
+    def __init__(self,
+                 permute_obs=False,
+                 patch_size=6,
+                 occlusion_ratio=0.,
+                 render=False):
+        super(PuzzlePongTask, self).__init__()
+        self.render = render
+        self.occlusion_ratio = occlusion_ratio
+        self.env = atari_wrappers.wrap_deepmind(
+            env=atari_wrappers.make_atari(env_id='PongNoFrameskip-v4'),
+            episode_life=False,
+            clip_rewards=False,
+            flicker=False,
+            frame_stack=True,
+            permute_obs=permute_obs,
+            patch_size=patch_size,
+            rand_zero_out_ratio=occlusion_ratio,
+        )
+
+    def modify_obs(self, obs):
+        # Convert from LazyFrames to numpy array.
+        obs = np.array(obs)
+        # Uncomment to confirm the env is indeed passing shuffled obs.
+        # cv2.imshow('Pong debug', cv2.resize(obs[0], (200, 200)))
+        # cv2.waitKey(1)
+        if 0. < self.occlusion_ratio < 1.:
+            return {'obs': obs, 'patches_to_use': self.env.patch_to_keep_ix}
+        else:
+            return obs

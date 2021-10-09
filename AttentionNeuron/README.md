@@ -25,6 +25,9 @@ python eval_agent.py --log-dir=pretrained/ant_pi --n-episodes=100
 # Test the policy in CarRacing (PI and non-PI policy).
 python eval_agent.py --log-dir=pretrained/carracing_pi --n-episodes=100
 python eval_agent.py --log-dir=pretrained/carracing --n-episodes=100
+
+# Test the policy in PuzzlePong (behavior cloning, trained with 70% occlusion ratio).
+python eval_agent.py --log-dir=pretrained/puzzle_pong --n-episodes=100
 ```
 
 Each task has some configurations in the corresponding `config.gin` file that can be played with:
@@ -43,6 +46,11 @@ Each task has some configurations in the corresponding `config.gin` file that ca
 
 - `bkg` defines the background to use. You can put a `.jpg` image in the `tasks/bkg` folder and use the image name.
 E.g. `bkg="mt_fuji"` will load `tasks/bkg/mt_fuji.jpg` as the background. `bkg=None` refers to the original background.
+- `patch_size` defines the size of the patch to be shuffled.
+
+**PuzzlePong**
+
+- `occlusion_ratio` defines the percentage of patches to discard during tests.
 - `patch_size` defines the size of the patch to be shuffled.
 
 ## Training

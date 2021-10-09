@@ -6,3 +6,5 @@ pybullet
 gin-config
 cma
 opencv-python
+# gym 0.20.0 reports error: https://github.com/openai/gym/issues/2432
+gym[atari]==0.19.0

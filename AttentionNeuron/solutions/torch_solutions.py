@@ -359,3 +359,80 @@ class PIAttentionAgent(BaseTorchSolution):
         self.prev_act = torch.zeros(1, self.act_dim)
         self.prev_hidden = torch.zeros(self.hidden_dim, self.msg_dim)
         self.hx = None
+
+
+@gin.configurable
+class PuzzlePongSolution(BaseTorchSolution):
+    """AttentionNeuron + Convnet."""
+
+    def __init__(self,
+                 device,
+                 act_dim,
+                 msg_dim,
+                 pos_em_dim,
+                 patch_size=6,
+                 stack_k=4,
+                 feat_dim=20):
+        super(PuzzlePongSolution, self).__init__(device)
+        self.act_dim = act_dim
+        self.prev_action = None
+        self.feat_dim = feat_dim
+        self.msg_dim = msg_dim
+
+        self.vision_pi_layer = VisionAttentionNeuronLayer(
+            act_dim=act_dim,
+            hidden_dim=feat_dim**2,
+            msg_dim=msg_dim,
+            pos_em_dim=pos_em_dim,
+            patch_size=patch_size,
+            stack_k=stack_k,
+            with_learnable_ln_params=True,
+            stack_dim_first=True,
+        )
+        self.modules_to_learn.append(self.vision_pi_layer)
+
+        self.cnn = nn.Sequential(
+            nn.Conv2d(
+                in_channels=msg_dim,
+                out_channels=64,
+                kernel_size=(4, 4),
+                stride=(2, 2),
+            ),
+            nn.ReLU(),
+            nn.Conv2d(
+                in_channels=64,
+                out_channels=64,
+                kernel_size=(3, 3),
+                stride=(1, 1),
+            ),
+            nn.ReLU(),
+            nn.Flatten(),
+            nn.Linear(in_features=3136, out_features=512),
+            nn.ReLU(),
+            nn.Linear(in_features=512, out_features=act_dim),
+        )
+        self.modules_to_learn.append(self.cnn)
+
+        print('#params={}'.format(self.get_params().size))
+
+    def _get_action(self, obs):
+        if self.prev_action is None:
+            self.prev_action = torch.zeros(1, self.act_dim)
+            self.prev_action[:, 3] = 1
+        x = self.vision_pi_layer(obs=obs, prev_act=self.prev_action)
+        assert x.shape == (self.feat_dim**2, self.msg_dim)
+
+        # Reshape to input to convnet.
+        x = x.reshape(self.feat_dim, self.feat_dim, self.msg_dim).unsqueeze(0)
+        x = torch.relu(x.permute(0, 3, 1, 2))
+
+        action = self.cnn(x)
+        assert action.shape == (1, self.act_dim)
+        action = torch.argmax(action, dim=-1)
+        self.prev_action = torch.zeros(1, self.act_dim)
+        self.prev_action[:, action[0]] = 1
+
+        return action
+
+    def reset(self):
+        self.prev_action = None
