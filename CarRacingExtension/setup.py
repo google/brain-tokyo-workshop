@@ -19,5 +19,5 @@ setup(
     license='MIT License',
     zip_safe=False,
     install_requires=['gym[box2d]>=0.15.3',
-                      'opencv-python==4.1.2.30'],
+                      'opencv-python==4.2.0.32'],
 )
