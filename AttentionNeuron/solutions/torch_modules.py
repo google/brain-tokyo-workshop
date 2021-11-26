@@ -101,20 +101,22 @@ class AttentionNeuronLayer(nn.Module):
             dim_in=pos_em_dim, msg_dim=self.msg_dim, bias=bias, scale=scale)
 
     def forward(self, obs, prev_act):
-        # AttentionNeuron is the first layer, so obs is numpy array.
-        x = torch.from_numpy(obs.copy()).float().unsqueeze(-1)
+        if isinstance(obs, np.ndarray):
+            x = torch.from_numpy(obs.copy()).float().unsqueeze(-1)
+        else:
+            x = obs.unsqueeze(-1)
         obs_dim = x.shape[0]
 
         x_aug = torch.cat([x, torch.vstack([prev_act] * obs_dim)], dim=-1)
         if self.hx is None:
             self.hx = (
-                torch.zeros(obs_dim, self.pos_em_dim),
-                torch.zeros(obs_dim, self.pos_em_dim),
+                torch.zeros(obs_dim, self.pos_em_dim).to(x.device),
+                torch.zeros(obs_dim, self.pos_em_dim).to(x.device),
             )
         self.hx = self.lstm(x_aug, self.hx)
 
-        w = torch.tanh(
-            self.attention(data_q=self.pos_embedding, data_k=self.hx[0]))
+        w = torch.tanh(self.attention(
+            data_q=self.pos_embedding.to(x.device), data_k=self.hx[0]))
         output = torch.matmul(w, x)
         return torch.tanh(output)
 
