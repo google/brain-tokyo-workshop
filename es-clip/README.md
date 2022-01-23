@@ -77,6 +77,7 @@ Like the previous script, The behavior of the fitting could be fine-tuned by spe
 
 ```bash
 python3 ./es_clip.py \
+    --prompt "Walt Disney World"    `# The prompt` \
     --out es_clip_out               `# Output directory` \
     --height 200                    `# Canvas height` \
     --width  200                    `# Canvas width` \
