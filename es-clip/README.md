@@ -7,7 +7,19 @@
 This is the code for our work "Modern Evolution Strategies for Creativity: Fitting Concrete Images and Abstract Concepts".
 For more information, please refer to <https://es-clip.github.io/>. 
 
-**Update**: Please scroll down for a section discribing community works.
+**Update**: 
+
+- 🌟NEW🌟 JAX-based (re)implementation on Colab
+- Please scroll down for a section discribing community works.
+
+## 🌟NEW🌟 JAX-based (Re)implementation on Colab
+
+We have re-implemented ES-CLIP in JAX, which is more suitable for running on Colab as notebooks:
+
+- https://github.com/google/evojax/blob/main/examples/notebooks/AbstractPainting01.ipynb
+- https://github.com/google/evojax/blob/main/examples/notebooks/AbstractPainting02.ipynb
+
+For the original implementation, see below.
 
 ## Requirements
 
