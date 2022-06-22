@@ -127,6 +127,10 @@ Please [let us know](https://github.com/es-clip/es-clip.github.io/issues) if you
 * [@eyaler](https://twitter.com/eyaler) Provided a [biggan + clip + cma-es work](https://github.com/eyaler/clip_biggan) as a [Colab notebook](https://colab.sandbox.google.com/github/eyaler/clip_biggan/blob/main/WanderCLIP.ipynb).
 * [@gestaltungai](https://twitter.com/gestaltungai) started a simple [Colab notebook](https://colab.research.google.com/drive/1DGNxs8E4cA_ZUwPQdusxDArCWj-JX5TG) to play with this work.
 
+## Differentiable Baselines
+
+Please see ``diff_baseline/*.ipynb`` for differentiable baselines. They are for reference purpose only.
+
 ## Disclaimer
 
 This is not an official Google product.
