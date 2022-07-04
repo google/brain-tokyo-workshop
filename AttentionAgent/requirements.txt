@@ -20,5 +20,5 @@ google-cloud-storage==1.23.0
 google-pasta==0.1.7
 google-resumable-media==0.5.0
 googleapis-common-protos==1.6.0
-opencv-python==4.1.2.30
+opencv-python==4.2.0.32
 #ppaquette_gym_doom
