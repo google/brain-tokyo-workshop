@@ -113,7 +113,7 @@ mpmath==1.1.0
 msgpack==0.6.1
 multipledispatch==0.6.0
 navigator-updater==0.2.1
-nbconvert==5.6.1
+nbconvert==6.3.0
 nbformat==5.0.4
 networkx==2.4
 nltk==3.4.5
