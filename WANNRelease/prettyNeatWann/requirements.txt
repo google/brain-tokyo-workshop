@@ -95,7 +95,7 @@ keyring==21.1.0
 kiwisolver==1.1.0
 lazy-object-proxy==1.4.3
 libarchive-c==2.8
-lief==0.9.0
+lief==0.12.1
 llvmlite==0.31.0
 locket==0.2.0
 lxml==4.5.0
