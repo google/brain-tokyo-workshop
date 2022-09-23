@@ -1,6 +1,6 @@
 Cython==0.29.14
 gin-config==0.1.4
-protobuf==3.7.1
+protobuf==3.18.3
 grpcio==1.20.1
 grpcio-tools==1.20.1
 gym[box2d]==0.15.3
