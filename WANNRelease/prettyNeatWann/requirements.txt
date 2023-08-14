@@ -214,7 +214,7 @@ tblib==1.6.0
 terminado==0.8.3
 testpath==0.4.4
 toolz==0.10.0
-tornado==6.0.3
+tornado==6.3.3
 tqdm==4.42.1
 traitlets==4.3.3
 ujson==1.35
