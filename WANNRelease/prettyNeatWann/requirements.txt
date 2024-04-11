@@ -67,7 +67,7 @@ h5py==2.10.0
 HeapDict==1.0.1
 html5lib==1.0.1
 hypothesis==5.5.4
-idna==2.8
+idna==3.7
 imageio==2.6.1
 imageio-ffmpeg==0.3.0
 imagesize==1.2.0
